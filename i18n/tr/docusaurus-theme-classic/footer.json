@@ -1,0 +1,18 @@
+{
+    "link.title.Community": {
+      "message": "Topluluk",
+      "description": "The title of the community page"
+    },
+    "link.title.Docs": {
+        "message": "Dökümanlar",
+        "description": "The title of the docs page"
+    },
+    "link.item.label.Docs": {
+        "message": "Dökümanlar",
+        "description": "The Label of the docs page"
+    },
+    "copyright": {
+        "message": "Copyright © 2022 Notus Network. Bütün hakları saklıdır.",
+        "description": "The footer copyright"
+    }
+  }

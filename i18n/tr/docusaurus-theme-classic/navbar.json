@@ -1,0 +1,10 @@
+{
+    "link.title.Overview": {
+        "message": "Genel Bakış",
+        "description": "Link title for the overview page"
+    },
+    "link.title.GitHub": {
+        "message": "GitHub sayfamız",
+        "description": "Link title for the GitHub page"
+    }
+  }

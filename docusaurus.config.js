@@ -13,21 +13,13 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'notus-network', // Usually your GitHub org/user name.
-  projectName: 'notus-docs', // Usually your repo name.
+  organizationName: 'notus-network',
+  projectName: 'notus-docs',
   trailingSlash: false,
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'tr',
+    locales: ['tr', 'en'],
   },
-
   presets: [
     [
       'classic',
@@ -36,7 +28,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-          'https://github.com/Notus-Network/Notus-Docs/tree/main/docs',
+          'https://github.com/Notus-Network/Notus-Docs/tree/main/',
           routeBasePath: '/',
         },
         blog: false,
@@ -52,7 +44,7 @@ const config = {
       navbar: {
         title: 'Notus Network Docs',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Site Logo',
           src: 'img/brand/Notus_icon_gradient_bg.svg',
         },
         items: [
@@ -67,30 +59,16 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          }
         ],
       },
      /* algolia: {
-        // The application ID provided by Algolia
         appId: 'LRR0WHMG8Y',
-  
-        // Public API key: it is safe to commit it
         apiKey: '80436f7efbeccb8701d266197aaafad8',
-  
         indexName: '/',
-  
-        // Optional: see doc section below
-        contextualSearch: true,
-  
-        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-        externalUrlRegex: 'external\\.com|domain\\.com',
-  
-        // Optional: Algolia search parameters
-        searchParameters: {},
-  
-        // Optional: path for search page that enabled by default (`false` to disable it)
-        searchPagePath: 'search',
-  
-        //... other Algolia params
       },*/
       footer: {
         style: 'dark',
@@ -108,25 +86,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/Notus-Network',
               },
             ],
           },
