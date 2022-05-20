@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknotus_docs=self.webpackChunknotus_docs||[]).push([[70],{6697:function(e){e.exports=JSON.parse('{"title":"Test File","description":"Test Description","slug":"/category/test-file","permalink":"/category/test-file","navigation":{"previous":{"title":"Giri\u015f","permalink":"/"},"next":{"title":"Markdown Features","permalink":"/test/example"}}}')}}]);
