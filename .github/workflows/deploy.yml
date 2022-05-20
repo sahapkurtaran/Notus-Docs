@@ -12,7 +12,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./website
+    working-directory: ./
 
 # Cancels all previous workflow runs for the same branch that have not yet completed.
 concurrency:
