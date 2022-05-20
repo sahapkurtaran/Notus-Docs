@@ -52,7 +52,7 @@ const config = {
       navbar: {
         title: 'Notus Network Docs',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Site Logo',
           src: 'img/brand/Notus_icon_gradient_bg.svg',
         },
         items: [
