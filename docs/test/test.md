@@ -1,7 +1,7 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
 
-# Sayfa
+# Kategori İsmi
 
-Test dosyası
+Kategori Açıklamaları
