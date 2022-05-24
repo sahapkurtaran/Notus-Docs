@@ -5,4 +5,4 @@ slug: /
 
 # Giriş
 
-Bu web site notus networkün dökümanlarını içermektedir.
+Bu web site **Notus Network** dökümanlarını içermektedir.
