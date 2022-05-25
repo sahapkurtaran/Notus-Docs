@@ -1,0 +1,10 @@
+{
+    "link.title.Overview": {
+        "message": "Overview",
+        "description": "Link title for the overview page"
+    },
+    "link.title.GitHub": {
+        "message": "GitHub Page",
+        "description": "Link title for the GitHub page"
+    }
+  }
