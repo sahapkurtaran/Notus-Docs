@@ -1,18 +1,22 @@
 {
-    "link.title.Community": {
-      "message": "Topluluk",
-      "description": "The title of the community page"
-    },
-    "link.title.Docs": {
-        "message": "Dökümanlar",
-        "description": "The title of the docs page"
-    },
-    "link.item.label.Docs": {
-        "message": "Dökümanlar",
-        "description": "The Label of the docs page"
-    },
-    "copyright": {
-        "message": "Copyright © 2022 Notus Network. Bütün hakları saklıdır.",
-        "description": "The footer copyright"
-    }
+  "link.title.Docs": {
+    "message": "Dökümantasyon",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "Topluluk",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.item.label.Docs": {
+    "message": "Dökümantasyon",
+    "description": "The label of footer link with label=Docs linking to /"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/Notus-Network"
+  },
+  "copyright": {
+    "message": "Copyright © 2022 Notus Network",
+    "description": "The footer copyright"
   }
+}

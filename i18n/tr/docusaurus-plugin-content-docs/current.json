@@ -4,15 +4,15 @@
     "description": "The label for version current"
   },
   "sidebar.overview.category.Getting Started": {
-    "message": "Getting Started",
+    "message": "Başlangıç",
     "description": "The label for category Getting Started in sidebar overview"
   },
   "sidebar.overview.category.Notus Basics": {
-    "message": "Notus Basics",
+    "message": "Notus Temelleri",
     "description": "The label for category Notus Basics in sidebar overview"
   },
   "sidebar.developer.category.Developer Guides": {
-    "message": "Developer Guides",
+    "message": "Geliştirici Rehberleri",
     "description": "The label for category Developer Guides in sidebar developer"
   },
   "sidebar.api.category.APIs": {
@@ -24,19 +24,19 @@
     "description": "The label for category Node in sidebar node"
   },
   "sidebar.node.category.Development": {
-    "message": "Development",
+    "message": "Geliştirme",
     "description": "The label for category Development in sidebar node"
   },
   "sidebar.overview.category.Consensus": {
-    "message": "Consensus",
+    "message": "Konsensüs",
     "description": "The label for category Consensus in sidebar overview"
   },
   "sidebar.overview.category.Concept": {
-    "message": "Concept",
+    "message": "Konsept",
     "description": "The label for category Concept in sidebar overview"
   },
   "sidebar.overview.category.Cryptography": {
-    "message": "Cryptography",
+    "message": "Kriptografi",
     "description": "The label for category Cryptography in sidebar overview"
   },
   "sidebar.overview.category.Encode": {
@@ -44,7 +44,7 @@
     "description": "The label for category Encode in sidebar overview"
   },
   "sidebar.overview.category.Encryption": {
-    "message": "Encryption",
+    "message": "Şifreleme",
     "description": "The label for category Encryption in sidebar overview"
   },
   "sidebar.overview.category.Hash": {
@@ -52,15 +52,15 @@
     "description": "The label for category Hash in sidebar overview"
   },
   "sidebar.overview.category.Network": {
-    "message": "Network",
+    "message": "Ağ",
     "description": "The label for category Network in sidebar overview"
   },
   "sidebar.overview.category.Governance": {
-    "message": "Governance",
+    "message": "Yönetim",
     "description": "The label for category Governance in sidebar overview"
   },
   "sidebar.overview.category.Virtual Machine": {
-    "message": "Virtual Machine",
+    "message": "Sanal Makine",
     "description": "The label for category Virtual Machine in sidebar overview"
   }
 }
