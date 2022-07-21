@@ -62,5 +62,33 @@
   "sidebar.overview.category.Virtual Machine": {
     "message": "Sanal Makine",
     "description": "The label for category Virtual Machine in sidebar overview"
+  },
+  "sidebar.api.category.REST": {
+    "message": "REST",
+    "description": "The label for category REST in sidebar api"
+  },
+  "sidebar.api.category.Node": {
+    "message": "Node",
+    "description": "The label for category Node in sidebar api"
+  },
+  "sidebar.api.category.Metrics": {
+    "message": "Metrikler",
+    "description": "The label for category Metrics in sidebar api"
+  },
+  "sidebar.api.category.Blockchain": {
+    "message": "Blok Zinciri",
+    "description": "The label for category Blockchain in sidebar api"
+  },
+  "sidebar.api.category.Wallet": {
+    "message": "Cüzdan",
+    "description": "The label for category Wallet in sidebar api"
+  },
+  "sidebar.api.category.Transaction": {
+    "message": "İşlem",
+    "description": "The label for category Transaction in sidebar api"
+  },
+  "sidebar.api.category.NFT": {
+    "message": "NFT",
+    "description": "The label for category NFT in sidebar api"
   }
 }

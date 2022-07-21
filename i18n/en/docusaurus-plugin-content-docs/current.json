@@ -11,22 +11,6 @@
     "message": "Notus Basics",
     "description": "The label for category Notus Basics in sidebar overview"
   },
-  "sidebar.developer.category.Developer Guides": {
-    "message": "Developer Guides",
-    "description": "The label for category Developer Guides in sidebar developer"
-  },
-  "sidebar.api.category.APIs": {
-    "message": "APIs",
-    "description": "The label for category APIs in sidebar api"
-  },
-  "sidebar.node.category.Node": {
-    "message": "Node",
-    "description": "The label for category Node in sidebar node"
-  },
-  "sidebar.node.category.Development": {
-    "message": "Development",
-    "description": "The label for category Development in sidebar node"
-  },
   "sidebar.overview.category.Consensus": {
     "message": "Consensus",
     "description": "The label for category Consensus in sidebar overview"
@@ -62,5 +46,49 @@
   "sidebar.overview.category.Virtual Machine": {
     "message": "Virtual Machine",
     "description": "The label for category Virtual Machine in sidebar overview"
+  },
+  "sidebar.developer.category.Developer Guides": {
+    "message": "Developer Guides",
+    "description": "The label for category Developer Guides in sidebar developer"
+  },
+  "sidebar.api.category.APIs": {
+    "message": "APIs",
+    "description": "The label for category APIs in sidebar api"
+  },
+  "sidebar.api.category.REST": {
+    "message": "REST",
+    "description": "The label for category REST in sidebar api"
+  },
+  "sidebar.api.category.Node": {
+    "message": "Node",
+    "description": "The label for category Node in sidebar api"
+  },
+  "sidebar.api.category.Metrics": {
+    "message": "Metrics",
+    "description": "The label for category Metrics in sidebar api"
+  },
+  "sidebar.api.category.Blockchain": {
+    "message": "Blockchain",
+    "description": "The label for category Blockchain in sidebar api"
+  },
+  "sidebar.api.category.Wallet": {
+    "message": "Wallet",
+    "description": "The label for category Wallet in sidebar api"
+  },
+  "sidebar.api.category.Transaction": {
+    "message": "Transaction",
+    "description": "The label for category Transaction in sidebar api"
+  },
+  "sidebar.api.category.NFT": {
+    "message": "NFT",
+    "description": "The label for category NFT in sidebar api"
+  },
+  "sidebar.node.category.Node": {
+    "message": "Node",
+    "description": "The label for category Node in sidebar node"
+  },
+  "sidebar.node.category.Development": {
+    "message": "Development",
+    "description": "The label for category Development in sidebar node"
   }
 }

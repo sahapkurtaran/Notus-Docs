@@ -24,7 +24,7 @@
     "description": "Navbar item with label Advanced"
   },
   "item.label.Migration": {
-    "message": "Migration Guide",
+    "message": "Migration",
     "description": "Navbar item with label Migration"
   },
   "item.label.FAQ": {
