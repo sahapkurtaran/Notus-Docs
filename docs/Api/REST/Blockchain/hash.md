@@ -6,7 +6,7 @@ title: /block/hash/{uuid}
 
 **Request Tipi: GET**
 
-UUID değerinin verildiği blok hash değerini veriyor
+UUID değerinin verildiği blok hash değerini verir.
 
 ## Parametreler
 
