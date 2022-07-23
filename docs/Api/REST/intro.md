@@ -71,48 +71,173 @@ Varsayılan Port Numarası: 5000
   - Testnet: `Varsayılan Port + 901`
   - Devnet: `Varsayılan Port + 902`
 
+## Nasıl Get Requesti Kullanılır?
+
+GET tipinde requestler atmak için örnek, her objeye uygun JS/TS ve C# kodları.
+
+### Javascript / Typescript
+
+```javascript
+export function GetRequest(url) {
+  return fetch(url).then(async (response) => {
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return JSON.stringify(await response.json());
+  });
+}
+```
+
+```typescript
+export function GetRequest(url: string): Promise<string> {
+  return fetch(url).then(async (response) => {
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return JSON.stringify(await response.json());
+  });
+}
+```
+
+### C#
+
+```cs
+public static async Task<string> Get(string UrlAddress, int TimeOut = 0, bool UseTimeoutAsSecond = true)
+{
+    try
+    {
+        using (var client = new HttpClient())
+        {
+            if (TimeOut > 0)
+            {
+                client.Timeout = (UseTimeoutAsSecond == true ? TimeSpan.FromSeconds(TimeOut * 1000) : TimeSpan.FromMilliseconds(TimeOut));
+            }
+            HttpResponseMessage response = await client.GetAsync(UrlAddress);
+            if (response.IsSuccessStatusCode)
+            {
+                HttpContent responseContent = response.Content;
+                return await responseContent.ReadAsStringAsync();
+            }
+        }
+    }
+    catch (Exception err)
+    {
+        Console.WriteLine(err.Message);
+    }
+    return string.Empty;
+}
+```
+
+## Nasıl Post Requesti Kullanılır?
+
+POST tipinde requestler atmak için örnek, her objeye uygun JS/TS ve C# kodları.
+
+### Javascript / Typescript
+
+```javascript
+export function PostRequest(url, object) {
+  return fetch(url, {
+    method: "POST",
+    body: new URLSearchParams({
+      data: JSON.stringify(object),
+    }),
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  }).then(async (response) => {
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return JSON.stringify(await response.json());
+  });
+}
+```
+
+```typescript
+export function PostRequest<T>(url: string, object: T): Promise<string> {
+  return fetch(url, {
+    method: "POST",
+    // x-www-form-urlencoded
+    body: new URLSearchParams({
+      data: JSON.stringify(object),
+    }),
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  }).then(async (response) => {
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return JSON.stringify(await response.json());
+  });
+}
+```
+
+### C#
+
+```cs
+public static async Task<string> Post(string UrlAddress, Dictionary<string, string> PostData, int TimeOut = 0, bool UseTimeoutAsSecond = true)
+{
+    using (HttpClient client = new HttpClient())
+    {
+        if (TimeOut > 0)
+        {
+            client.Timeout = (UseTimeoutAsSecond == true ? TimeSpan.FromSeconds(TimeOut * 1000) : TimeSpan.FromMilliseconds(TimeOut));
+        }
+
+        HttpResponseMessage response = await client.PostAsync(UrlAddress, new FormUrlEncodedContent(PostData));
+        if (response.IsSuccessStatusCode)
+        {
+            HttpContent responseContent = response.Content;
+            return await responseContent.ReadAsStringAsync();
+        }
+    }
+    return string.Empty;
+}
+```
+
 ## Yol Listesi
 
 ---
 
 ### Node
 
-| Tip | Yol        | Açıklama                                      |
-| :-- | :--------- | :-------------------------------------------- |
-| GET | /online    | Node'un online durumunu gösterir.             |
-| GET | /node      | Tüm tiplerdeki node listesini verir.          |
-| GET | /master    | Master tipinde Node'ların listesini verir.    |
-| GET | /main      | Main tipinde Node'ların listesini verir.      |
-| GET | /replicant | Replicant tipinde Node'ların listesini verir. |
+| Tip | Yol                              | Açıklama                                      |
+| :-- | :------------------------------- | :-------------------------------------------- |
+| GET | [/online](Node/online.md)        | Node'un online durumunu gösterir.             |
+| GET | [/node](Node/node.md)            | Tüm tiplerdeki node listesini verir.          |
+| GET | [/master](Node/master.md)        | Master tipinde Node'ların listesini verir.    |
+| GET | [/main ](Node/main.md)           | Main tipinde Node'ların listesini verir.      |
+| GET | [/replicant ](Node/replicant.md) | Replicant tipinde Node'ların listesini verir. |
 
 ### Metrikler
 
-| Tip | Yol                | Açıklama                                     |
-| :-- | :----------------- | :------------------------------------------- |
-| GET | /metrics/node      | Kaç Node'un var olduğunu gösterir.           |
-| GET | /metrics/master    | Kaç Master Node'un var olduğunu gösterir.    |
-| GET | /metrics/main      | Kaç Main Node'un var olduğunu gösterir.      |
-| GET | /metrics/replicant | Kaç Replicant Node'un var olduğunu gösterir. |
-| GET | /metrics/block     | Kaç tane blok olduğunu verir.                |
+| Tip | Yol                                        | Açıklama                                     |
+| :-- | :----------------------------------------- | :------------------------------------------- |
+| GET | [/metrics/node](Metrics/node.md)           | Kaç Node'un var olduğunu gösterir.           |
+| GET | [/metrics/master](Metrics/master.md)       | Kaç Master Node'un var olduğunu gösterir.    |
+| GET | [/metrics/main](Metrics/main.md)           | Kaç Main Node'un var olduğunu gösterir.      |
+| GET | [/metrics/replicant](Metrics/replicant.md) | Kaç Replicant Node'un var olduğunu gösterir. |
+| GET | [/metrics/block](Metrics/block.md)         | Kaç tane blok olduğunu verir.                |
 
 ### Blok Zinciri
 
-| Tip | Yol                  | Parametreler | Açıklama                                           |
-| :-- | :------------------- | :----------- | :------------------------------------------------- |
-| GET | /block/summary       |              | Son blok hakkında bilgi verir.                     |
-| GET | /block/last          |              | Son bloğun içeriğini verir.                        |
-| GET | /block/hash/{uuid}   | Block UUID   | UUID değerinin verildiği blok hash değerini verir. |
-| GET | /block/status/{uuid} | Block UUID   | UUID değerinin verildiği bloğun durumunu gösterir. |
-| GET | /currency/list       |              | Bütün kullanılabilir para birimlerini verir.       |
-| GET | /info/genesis        |              | Genesis blok bilgisini verir.                      |
-| GET | /info/transfer       |              | Şu anki işlemlerin ücret bilgisini verir.          |
-| GET | /info/reserve        |              | Notus Tokenin reserve edilmiş miktarını verir.     |
+| Tip | Yol                                          | Parametreler | Açıklama                                           |
+| :-- | :------------------------------------------- | :----------- | :------------------------------------------------- |
+| GET | [/block/summary](Blockchain/summary.md)      |              | Son blok hakkında bilgi verir.                     |
+| GET | [/block/last](Blockchain/last.md)            |              | Son bloğun içeriğini verir.                        |
+| GET | [/block/hash/{uuid}](Blockchain/hash.md)     | Block UUID   | UUID değerinin verildiği blok hash değerini verir. |
+| GET | [/block/status/{uuid}](Blockchain/status.md) | Block UUID   | UUID değerinin verildiği bloğun durumunu gösterir. |
+| GET | [/currency/list](Blockchain/currencylist.md) |              | Bütün kullanılabilir para birimlerini verir.       |
+| GET | [/info/genesis](Blockchain/infogenesis.md)   |              | Genesis blok bilgisini verir.                      |
+| GET | [/info/transfer](Blockchain/infotransfer.md) |              | Şu anki işlemlerin ücret bilgisini verir.          |
+| GET | [/info/reserve](Blockchain/inforeserve.md)   |              | Notus Tokenin reserve edilmiş miktarını verir.     |
 
 ### Cüzdan
 
-| Tip | Yol                  | Parametreler    | Açıklama                                                      |
-| :-- | :------------------- | :-------------- | :------------------------------------------------------------ |
-| GET | /balance/{walletKey} | Cüzdan Anahtarı | Cüzdan anahtarının verildiği cüzdanın bakiye bilgisini verir. |
+| Tip | Yol                                       | Parametreler    | Açıklama                                                      |
+| :-- | :---------------------------------------- | :-------------- | :------------------------------------------------------------ |
+| GET | [/balance/{walletKey}](Wallet/balance.md) | Cüzdan Anahtarı | Cüzdan anahtarının verildiği cüzdanın bakiye bilgisini verir. |
 
 ### İşlem
 
@@ -122,16 +247,16 @@ Airdrop sadece Testnet ve Devnet için kullanılabilir.
 
 :::
 
-| Tip  | Yol                        | Parametreler       | Açıklama                                                  |
-| :--- | :------------------------- | :----------------- | :-------------------------------------------------------- |
-| POST | /send?data="preTranfer"    | preTransfer Yapısı | Transfer işlemini Node'a gönderir.                        |
-| GET  | /transaction/status/{uuid} | İşlem UUID         | UUID değerinin verildiği işlem durumunu verir.            |
-| GET  | /airdrop/{walletKey}       | Cüzdan Anahtarı    | Cüzdan anahtarının verildiği cüzdana airdrop işlemi yapar |
+| Tip  | Yol                                                            | Parametreler       | Açıklama                                                  |
+| :--- | :------------------------------------------------------------- | :----------------- | :-------------------------------------------------------- |
+| POST | [/send?data="preTranfer"](Transaction/send.md)                 | preTransfer Yapısı | Transfer işlemini Node'a gönderir.                        |
+| GET  | [/transaction/status/{uuid}](Transaction/transactionstatus.md) | İşlem UUID         | UUID değerinin verildiği işlem durumunu verir.            |
+| GET  | [/airdrop/{walletKey}](Transaction/airdrop.md)                 | Cüzdan Anahtarı    | Cüzdan anahtarının verildiği cüzdana airdrop işlemi yapar |
 
 ### NFT
 
-| Tip  | Yol                                   | Parametreler       | Açıklama                                                 |
-| :--- | :------------------------------------ | :----------------- | :------------------------------------------------------- |
-| POST | /storage/file/new?data="fileMetadata" | fileMetadata       | Yeni bir dosya oluşturmak için gerekli UUID'yi verir.    |
-| POST | /storage/file/update?data="byteData"  | byteData, fileUUID | fileUUID'si verilen dosyanın n 'inci byteArray'ini alır. |
-| GET  | /storage/file/status/{uuid}           | Dosya UUID         | UUID değerinin verildiği dosyanın işlem durumunu verir.  |
+| Tip  | Yol                                                   | Parametreler       | Açıklama                                                 |
+| :--- | :---------------------------------------------------- | :----------------- | :------------------------------------------------------- |
+| POST | [/storage/file/new?data="fileMetadata"](NFT/new.md)   | fileMetadata       | Yeni bir dosya oluşturmak için gerekli UUID'yi verir.    |
+| POST | [/storage/file/update?data="byteData"](NFT/update.md) | byteData, fileUUID | fileUUID'si verilen dosyanın n 'inci byteArray'ini alır. |
+| GET  | [/storage/file/status/{uuid}](NFT/status.md)          | Dosya UUID         | UUID değerinin verildiği dosyanın işlem durumunu verir.  |

@@ -12,7 +12,7 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/brand/Notus_icon_gradient_bg.svg",
   organizationName: "notus-network",
   projectName: "notus-docs",
   trailingSlash: false,
@@ -67,7 +67,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "Api/Fees",
+            docId: "Api/REST/intro",
             position: "left",
             label: "API",
           },
@@ -132,6 +132,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ["csharp", "typescript"],
       },
     }),
 };
