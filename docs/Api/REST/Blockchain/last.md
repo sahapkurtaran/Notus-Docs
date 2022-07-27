@@ -2,7 +2,7 @@
 
 **Request Tipi: GET**
 
-Son bloğun içeriğini verir.
+Son bloğun içeriğini gösterir.
 
 ## Response Gövdesi
 

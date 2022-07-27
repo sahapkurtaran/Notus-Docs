@@ -199,7 +199,7 @@ Cüzdanlar Notus Ağı üzerindeki en temel bileşenlerdir. Notus Ağı'nın üz
 
 #### Anahtar Kelimelerin Oluşturulması
 
-Cüzdan adresi oluşturmak için BIP39 standart kelime listesini kullanmaktayız. Diğer ağlar 12 veya 24 kelime listesini kullanmaktadırlar. Notus Ağı bu sayıyı standart olarak 16 kabul eder. 16 tane kelimeyi kullanarak bir cüzdan adresi oluşturur. İçerisinde aynı kelimeleri bulundurmaz.
+Cüzdan adresi oluşturmak için BIP39 standart kelime listesi kullanılır. Diğer ağlar 12 veya 24 kelimelik listeler kullanmaktadırlar. Notus Ağı bu sayıyı standart olarak 16 kabul eder. 16 tane kelimeyi kullanarak bir cüzdan adresi oluşturur. İçerisinde aynı kelimeleri bulundurmaz.
 
 ```js
 function SeedPhraseList(): string[] {
@@ -243,9 +243,9 @@ function Bip39Keyword(Bip39WordIndexNo: number): string {
 
 #### Private Key
 
-Private Key(Özel Anahtar) Prime256v1 algoritması kullandığımızdan dolayı 256 bitlik(32 bytelık) bir anahtardır.
+Private Key(Özel Anahtar) Prime256v1 algoritması kullanıldığından dolayı 256 bitlik(32 bytelık) bir anahtardır.
 
-Oluşturulan kelimeleri sınırlayıcı bir karakter ile birleştiyoruz. Bu sınırlayıcı karakter herhangi bir harf veya sayı olamaz
+Oluşturulan kelimeler sınırlayıcı bir karakter ile birleştirilir. Bu sınırlayıcı karakter herhangi bir harf veya sayı olamaz.
 
 Örnek:
 
@@ -254,7 +254,7 @@ Girdi = "giggle","injury","bracket","treat","olive","cave","sheriff","kiwi","gro
 Çıktı = giggle:injury:bracket:treat:olive:cave:sheriff:kiwi:grow:human:appear:fat:pulse:radar:method:myth
 ```
 
-Oluşturulan kelimelerin teker teker MD5 hashini alıyoruz.
+Oluşturulan kelimelerin teker teker MD5 hashi alınır.
 
 Örnek:
 
@@ -280,7 +280,7 @@ ea9f6aca279138c58f705c8d4cb4b8ce
 9b87b1ff71e8b4a5a0711c3d82f5bcba
 ```
 
-Bütün kelimelerin birleşiminin iki kez SashaHashini alıyoruz.
+Bütün kelimelerin birleşiminin SashaHash'i iki kez alınır.
 
 ```js
 SashaHash(SashaHash(bütünKelimeler) + : + bütünKelimeler)
@@ -294,14 +294,14 @@ SashaHash(SashaHash(bütünKelimeler) + : + bütünKelimeler)
 d151dc42a1391fc2a4d7a612484df3e06df6da950d31
 ```
 
-Bir döngüde ürettiğimiz MD5 hashleri ile ürettiğimiz sasha çıktısını toplayarak Sha1 hashini alıyoruz ve hexi 2 küçültüyoruz.
+Bir döngüde üretilen MD5 hashleri ile üretilen sasha çıktısı toplanarak Sha1 hashi alınır ve hexi 2 küçültülür.
 
 ```js
 hash[i] = shrinkHex(Sha1Hash(sashaHashOutput + : + hash[i]), 2)
 result += hash[i]
 ```
 
-Döngüden çıkan değerimiz private key(özel anahtar) oluyor.
+Döngüden çıkan değer private key(özel anahtar) olarak alınır.
 
 ```
 Çıktı
@@ -311,7 +311,7 @@ Döngüden çıkan değerimiz private key(özel anahtar) oluyor.
 
 #### Public Key
 
-Public Key ["_Eliptic Curve Cryptography_"](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) algoritmasında Private Keyimizi kullanarak X ve Y noktalarından oluşturulmuş bir adrestir. Bitcoinden farklı olarak Notus Network Prime256v1 algoritmasını kullanır.
+Public Key ["_Eliptic Curve Cryptography_"](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) algoritmasında Private Key kullanılarak X ve Y noktalarından oluşturulmuş bir adrestir. Bitcoinden farklı olarak Notus Network Prime256v1 algoritmasını kullanmaktadır.
 
 ```
 Çıktı
@@ -321,13 +321,13 @@ Public Key ["_Eliptic Curve Cryptography_"](https://en.wikipedia.org/wiki/Ellipt
 
 #### Cüzdan Adresi
 
-Cüzdan adresi sayıların ve harflerin birleşiminden oluşan bir adrestir. Public Keyimizi birkaç adımdan geçirerek cüzdan adresini oluşturmaktayız.
+Cüzdan adresi sayıların ve harflerin birleşiminden oluşan bir adrestir. Public Key birkaç adımdan geçirilerek cüzdan adresi oluşturulur.
 
-Public Key'in x ve y noktalarının başına 0 ekliyoruz.
+Public Key'in x ve y noktalarının başına 0 eklenir.
 
 `publicCords = 0 + publicKey.X + 0 + publicKey.Y`
 
-Public Key'in Y değerin son harfini veya sayısını 2 ile modunu alıyoruz. Public Key'in X değerinin başına eğer çıkan sonuç 0 ise 20, değil ise 30 ekliyoruz.
+Public Key'in Y değerin son harfi veya sayının 2 ile modu alınır. Public Key'in X değerinin başına eğer çıkan sonuç 0 ise 20, değil ise 30 eklenir.
 
 ```js
 pubCorsMain =
@@ -336,8 +336,8 @@ pubCorsMain =
     : "030") + pubCorsX;
 ```
 
-Oluşturduğumuz cüzdan adresinin ağ tipi oluşturacağımız cüzdan adresinin çıktısınıda etkilemektedir.
-Network Tiplerine göre değişiklik listesi:
+Oluşturulan cüzdan adresinin ağ tipi, oluşturulacak cüzdan adresinin çıktısını da etkilemektedir.
+Network tiplerine göre değişiklik listesi:
 
 | Network Tipi | Byte String | Network Tipi Yazısı |
 | :----------- | :---------- | :------------------ |
@@ -345,19 +345,19 @@ Network Tiplerine göre değişiklik listesi:
 | Testnet      | 20          | NT                  |
 | Devnet       | 30          | ND                  |
 
-İlk öncelikle iki kez Sasha Hash kullanarak ilk hashimizi alacağız ve hexi 22 düşüreceğiz.
+İlk olarak iki kez sasha hash alınır, hex'i 22 düşürülür. Sonuç olarak ilk hash elde edilir.
 
 ```js
 hash1 = shrinkHex(SashaHash(SashaHash(pubCorsMain)), 22);
 ```
 
-İkinci olarak tekrardan iki kez Sasha Hash kullanarak ikinci hashimizi alacağız ve hexi 4 düşüreceğiz.
+Sonrasında tekrar iki kez sasha hash alınır, hex'i 4 düşürülür. Sonuç olarak ikinci hash elde edilir.
 
 ```js
 hash2 = shrinkHex(SashaHash(SashaHash(networkTypeByte + publicCords)), 4);
 ```
 
-Son olarak base58 encode kullanarak iki hashi birleştireceğiz ve başına network tipi yazısını ekleyeceğiz.
+Son işlem olarak elde edilen iki hash ve "_Network Type Byte_" toplanır. Toplanan değerin base58 encode değeri alınır ve başına "_Network Type String_" eklenir. Sonuç olarak cüzdan adresi elde edilir.
 
 ```js
 walletKey = networkTypeString + bs58encode(networkTypeByte + hash1 + hash2, 36);
@@ -371,12 +371,12 @@ NREAj7a29qz1GhXoX88ebRd7zMXtiWMyyy6QkG
 
 ### Soğuk Cüzdan
 
-Blok Zinciri dünyasındaki en önemli veri "Hesaba Ait Özel Anahtar" olarak bilinmektedir. Her ne kadar özel donanımsal cihazlar geliştirilse de bu cihazlar özel anahtarınızın virüs veya saldırganlar tarafından ele geçirilmesini hala Brute-Force (deneme yanılma) ihtimalîne karşı korunmasızdır. Eklenen her güncellemenin kaynağı, Notus ‘un sahip olduğu durum tabanlı blok mimarisidir. Bu mimari sayesinde getirilen yenilikle birlikte, kullanıcının isteği dahilinde kullanıcının hesabı verdiği tarihler arasında ve verdiği şifre ile kilitlenir. Saldırganlar hesaba ait özel anahtarı bilseler bile hesabın içerisindeki bakiyeye ulaşamazlar.
+Blok Zinciri dünyasındaki en önemli veri "Hesaba Ait Özel Anahtar" olarak bilinmektedir. Her ne kadar özel donanımsal cihazlar geliştirilse de bu cihazlar sadece özel anahtarınızın virüs veya saldırganlar tarafından ele geçirilmesini engellemesine rağmen hala Brute-Force (deneme yanılma) ihtimalîne karşı korunmasızdır. Eklenen her güncellemenin kaynağı, Notus ‘un sahip olduğu durum tabanlı blok mimarisidir. Bu mimari sayesinde getirilen yenilikle birlikte, kullanıcının isteği dahilinde kullanıcının hesabı, verdiği tarihler arasında ve verdiği şifre ile kilitlenir. Saldırganlar hesaba ait özel anahtarı bilseler bile hesabın içerisindeki bakiyeye ulaşamazlar.
 
 #### Tarihli Soğuk Cüzdan
 
 Yeni mimariyle birlikte "_Tarihli Soğuk Cüzdan_" kavramı ortaya çıkmıştır. Tarihli Soğuk Cüzdan'da verdiğiniz tarihe kadar hesabınız kilitlenir. Saldırganlar hesabınızın özel anahtarını bilseler bile verdiğiniz tarihe kadar işlem yapamazlar.
 
-Tarih verdiğinizde sizden en az 8 haneli ve en çok 32 haneli bir şifre girmeniz istenir. Girdiğiniz şifre verdiğiniz tarihe kadar kapalı olan hesabınızın verdiğiniz tarihten sonraki ilk işlemi için gereklidir.
+Tarih verdiğinizde sizden en az 8 haneli ve en çok 32 haneli bir şifre girmeniz istenir. Girdiğiniz şifre verdiğiniz tarihe kadar kapalı olan hesabınızın, verdiğiniz tarihten sonraki ilk işlemi için gereklidir.
 
 #### ? Soğuk Cüzdan

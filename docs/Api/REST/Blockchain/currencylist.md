@@ -2,7 +2,7 @@
 
 **Request Tipi: GET**
 
-Bütün kullanılabilir para birimlerini verir.
+Bütün kullanılabilir para birimlerinigösterir.
 
 ## Response Gövdesi
 

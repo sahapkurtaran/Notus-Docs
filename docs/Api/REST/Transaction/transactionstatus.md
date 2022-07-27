@@ -6,7 +6,7 @@ title: /transaction/status/{uuid}
 
 **Request Tipi: GET**
 
-UUID değerinin verildiği işlem durumunu verir.
+UUID değerinin verildiği işlem durumunu gösterir.
 
 ## Parametreler
 

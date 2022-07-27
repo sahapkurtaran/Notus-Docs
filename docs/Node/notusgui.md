@@ -1,10 +1,10 @@
 # Notus-GUI
 
 :::note
-Şuan da bu dökümantasyon yapım aşamasındadır.
+Şu anda bu dökümantasyon yapım aşamasındadır.
 :::
 
-Notus GUI CNode uygulamasına hiçbir parametre vererek çalıştırırsanız önünüze çıkacak olan bir CLI tabanlı GUI'dır.
+Notus GUI CNode uygulamasına hiçbir parametre vermeyerek çalıştırırsanız önünüze çıkacak olan bir CLI tabanlı GUI'dır.
 
 Node açılımını kolaylaştırmak için yapılmış bu GUI ile seçeceğiniz node tipleri ve portları ile node'unuzu hızlıca açabilirsiniz.
 
@@ -14,7 +14,7 @@ Node açılımını kolaylaştırmak için yapılmış bu GUI ile seçeceğiniz 
 
 ### Start Node (Node'u Başlat)
 
-Seçtiğiniz ayarlar ile Node'unuzu başlatır.
+Seçtiğiniz ayarlar ile Node başlatılır.
 
 ### Node Type (Node Tipi)
 
@@ -33,7 +33,7 @@ Buradan açacağınız layerlara bağlı olarak varsayılan port numarasını de
 
 ### Reset Ports (Portları resetle)
 
-Buradan değiştiniz portları varsayılana geri döndürebilirsiniz.
+Buradan değiştirdiğiniz portları varsayılana geri döndürebilirsiniz.
 
 ### Change Wallet Key (Cüzdan Anahtarını Değiştir)
 
@@ -41,15 +41,15 @@ Buradan açacağınız node'un ödül alacağı cüzdan adresini seçebilirsiniz
 
 #### Generate New Key (Yeni Anahtar Oluştur)
 
-Yeni cüzdan adresi oluşturarak node'un ödül alacağı cüzdan adresi olarak kullanır.
+Yeni cüzdan adresi oluşturulur. Oluşturulan yeni cüzdan adresi Node'un ödül alacağı cüzdan adresi olarak tanımlanır.
 
 #### Define Your Key (Anahtarını Belirle)
 
-Cüzdan adresini sizin girdiğiniz cüzdan adresi yapar.
+Önceden oluşturulmuş olan cüzdan adresi girilir. Girilen cüzdan adresi Node'un ödül alacağı cüzdan adresi olarak tanımlanır.
 
 #### Delete Your Key (Anahtarı Sil)
 
-Girdiğiniz cüzdan adresini resetler.
+Tanımlı olan cüzdan adresini siler.
 
 ### Preferences (Tercihler)
 
@@ -69,8 +69,8 @@ Açacağınız node'u yerel olarak açar.
 
 #### Only Development Mode (Sadece Geliştirici Mode'u)
 
-Node'u devnet'te açar.
+Node'u Devnet'te açar.
 
 ### Show My Settings (Ayarlarımı Göster)
 
-Şuana kadar yaptığınız ayar tercihlerini gösterir.
+Şu ana kadar yaptığınız ayar tercihlerini gösterir.

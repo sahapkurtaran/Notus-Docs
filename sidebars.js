@@ -51,24 +51,6 @@ const sidebars = {
                   items: [
                     {
                       type: "category",
-                      label: "Encode",
-                      collapsible: true,
-                      collapsed: true,
-                      items: [
-                        "Overview/Basics/Concept/Cryptography/Encode/Base",
-                      ],
-                    },
-                    {
-                      type: "category",
-                      label: "Encryption",
-                      collapsible: true,
-                      collapsed: true,
-                      items: [
-                        "Overview/Basics/Concept/Cryptography/Encryption/AES",
-                      ],
-                    },
-                    {
-                      type: "category",
                       label: "Hash",
                       collapsible: true,
                       collapsed: true,

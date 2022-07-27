@@ -2,7 +2,7 @@
 
 **Request Tipi: GET**
 
-Main tipinde Node'ların listesini verir.
+Main tipinde Node'ların listesini gösterir.
 
 ## Response Gövdesi
 

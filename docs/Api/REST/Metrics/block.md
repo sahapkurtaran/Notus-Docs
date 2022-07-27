@@ -2,7 +2,7 @@
 
 **Request Tipi: GET**
 
-Kaç tane blok olduğunu verir.
+Kaç tane blok olduğunu gösterir.
 
 ## Response Gövdesi
 

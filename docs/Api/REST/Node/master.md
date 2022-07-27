@@ -2,7 +2,7 @@
 
 **Request Tipi: GET**
 
-Master tipinde Node'ların listesini verir.
+Master tipinde Node'ların listesini gösterir.
 
 ## Response Gövdesi
 
