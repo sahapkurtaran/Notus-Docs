@@ -4,6 +4,10 @@ slug: /
 
 # Genel Bakış
 
+:::note
+Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış söylemler bulunabilir.
+:::
+
 ## Giriş
 
 Notus Network, ölçeklenme ve uygulanabilirlik sorunlarına farklı bir bakış açısı sunan merkeziyetsiz bir blok zinciri platformudur.Ödeme işlemlerini de içeren Notus Network; yeni nesil web çözümlerini, işlem yükünü ağ içerisinde konsensus dahilinde dağıtarak işlemlerin hızlıca tamamlanmasına olanak tanımaktadır.

@@ -1,5 +1,9 @@
 # Sasha
 
+:::note
+Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış söylemler bulunabilir.
+:::
+
 Sasha hash metodu iki turdan oluşmaktadır. İçinde Ripemd160, SHA1, MD5 ve Blake2B hash yapılarını kullanmaktadır.
 Her iki turda da içinde dört tane toplama işlemi barındırmaktadır.
 

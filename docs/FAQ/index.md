@@ -1,4 +1,5 @@
 # S.S.S
 
 :::note
-Şu anda bu dökümantasyon yapım aşamasındadır.
+Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış söylemler bulunabilir.
+:::
