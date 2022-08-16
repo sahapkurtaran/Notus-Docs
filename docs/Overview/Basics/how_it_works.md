@@ -1,7 +1,7 @@
 # Notus Nasıl Çalışır
 
 :::note
-Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış söylemler bulunabilir.
+Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış bilgiler bulundurabilir.
 :::
 
 Notus Network bir blok zinciri platformu olarak merkeziyetsiz bir veri tabanı özelliklerini taşımaktadır. Buradaki veri tabanı farklı bilgi, veri ve işlem kayıtlarını tutmak, çalıştırmak ve diğer düğümlere dağıtmak amacıyla bir araya getirilmiş merkeziyetsiz bir veri topluluğudur.

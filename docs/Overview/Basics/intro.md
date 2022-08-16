@@ -1,7 +1,7 @@
 # Temel Bileşenler
 
 :::note
-Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış söylemler bulunabilir.
+Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış bilgiler bulundurabilir.
 :::
 
 Notus Network Platformu belirlediği temel sorunlara çözüm olarak farklı teknik, mimari yöntem ve geliştirmeler ekleyerek sistemi daha güncel ve erişilebilir hale getirmek üzere çalışmaktadır.

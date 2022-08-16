@@ -1,7 +1,7 @@
 # Notus-GUI
 
 :::note
-Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış söylemler bulunabilir.
+Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış bilgiler bulundurabilir.
 :::
 
 Notus GUI CNode uygulamasına hiçbir parametre vermeyerek çalıştırırsanız önünüze çıkacak olan bir CLI tabanlı GUI'dır.

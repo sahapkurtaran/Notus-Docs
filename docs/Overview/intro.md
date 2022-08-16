@@ -5,7 +5,7 @@ slug: /
 # Genel Bakış
 
 :::note
-Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış söylemler bulunabilir.
+Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış bilgiler bulundurabilir.
 :::
 
 ## Giriş
