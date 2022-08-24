@@ -1,41 +1,43 @@
 # General Design of Notus Network
 
 :::note
-Currently, this documentation is under construction. It may contain word errors or incorrect information.
+Currently, this documentation is under construction. It may contain word correct or incorrect information.
 :::
 
 ## Transaction Pools
 
-Notus Mimarisinin temelde odaklandığı sorunlardan birisi olan madencilerin ölçeklenme sorununa çözüm olarak ağın içerisinde yer alan madencilerin görev dağılım mimarisi tasarlanmıştır. Ölçeklenme sorunlarının temelinde bulunan ağ yoğunluğunu dağıtmanın en etkin yolu olarak işlem havuzlarının çoklanması ön görülmüştür.
+The main focus of Notus architecture is task distribution architecture for miners/validators in the network as a solution to the scaling problem, which is one of the main problems of blockchain platforms. The most effective way to overcome the bottleneck caused by network density underlying scaling problems has been considered to be the design of multiple transaction pools.
 
-Çoklu işlem havuzları platform için;
+Multiple Transaction Pools Benefits
 
-- Sınırsız işlem havuzu,
-- Madenciler / Validatörlerin işlemlere hızlı erişimi,
-- Ağ trafik yoğunluğunun dağıtılması gibi farklı avantajlar sağlamaktadır.
+· Unlimited transaction skill
+· Quick access to transactions by Miners/Verifiers
+· Minimum network traffic density
 
 ## Complex Block Architecture
 
-Günümüzde blok zinciri ağlarında ödeme işlemleri ve akıllı kontratlar olmak üzere 2 blok türü bulunmaktadır. Tüm ağ bu blokları işlemek üzere tasarlanmış olmasına karşın bu yapı farklı seviyedeki farklı ihtiyaçları karşılayamamaktadır. Notus mimarisi tasarlanırken hem kapalı ağ için hem de online kurulan bir ağın blok zinciri ihtiyaçlarını tek bir ağ ile çözülmesi düşünülerek tasarlanmıştır.
+Today, there are 2 types of blocks in blockchain networks: payment transactions and smart contracts. Although the entire network is designed to process these blocks, this structure cannot meet different needs at different levels. While the Notus architecture was being designed, it was designed both for a closed network structure and for solving the blockchain needs of an online network with a single network.
 
-Notus mimarisinde her halka farklı bir işlem türünü temsil edebilmektedir. Bu zorunlu olmamakla birlikte işlem durumuna göre bu şekilde olabilmektedir.
+In the Notus architecture, each ring can represent a different transaction type. Although this is not mandatory, it can be this way depending on the transaction situation.
 
-Örnek olarak;
+For example;
 
-- 1 numaralı blok; ödeme işlemlerini alabilir,
-- 2 numaralı blok; NFT görselinin saklandığı meta data’yı içerebilir,
-- 3 numaralı blok; akıllı kontratları içerebilir,
-- 4 numaralı blok; hesap güvenlik datası vb. içerebilmektedir.
+· Block number 1; receive payment transactions,
+· Block number 2; It may contain metadata where the NFT image is stored,
+· Block number 3; may include smart contracts,
+· Block number 4; account security data etc. may contain.
 
-Notus network, dosya ve benzeri büyük ham verileri Mainnet’in yoğunluğunu azaltmak için farklı mikro zincirlerde barındırabilecek şekilde tasarlandı.
+The Notus network is designed to host large raw data such as files and similar on different micro chains to reduce the density of the Mainnet.
 
-Blok oluşturma esnasında işlemlerin gruplandırılması süreci şu şekilde çalışmaktadır: Blok türü aynı ise belirlenenen süre aşılmadan havuzdan çekilebilecek olan maximum işlem çekilerek blok oluşturulur. Ya da farklı türde işlemler gelmiş ise ilk gelen türdeki işlem öncelikle yapılarak bir bloğun içerisinde aynı türde işlem olması sağlanmaktadır. Daha sonra diğer tür yapılmaktadır.
+The process of grouping transactions during block creation works as tracks:
 
-Yukarıdaki koşullardan biri karşılandığı durumda blok havuzundan çekilen işlemler blok oluşturma sürecine alınır.
+· If the block type is the same, transactions are taken from the pool before the specified time is exceeded, and a block is created with the maximum number of transactions and added to the chain.
+· When different types of transactions accumulate in the pool, priority is given to the transaction of the first type. If the following transaction types are the same, they are saved in the same block within the maximum block production time and added to the chain.
+· The behavior of other transaction types is also done by tracking this structure.
 
-![Blok Mimarisi](/img/whitepaper/blok_yapisi.jpg)
+![Block Architecture](/img/whitepaper/block_architecture.jpg)
 
-## Nonce Hesaplaması
+## Nonce Calculation
 
 Blok zincirinde oluşturulan her blok için hesaplanması gereken sayı nonce değeri olarak bilinmektedir. Bu değer Hash algoritması ile hesaplanmakta olup, blok doğruluğunu sağlamaktadır. Nonce değeri her blok için özel olarak hesaplandığı için içerik bütünlüğünü garanti etmektedir. Bu sayede özet algoritmalarının “_Collision_” olarak adlandırılan çakışma sonuçlarından da etkilenmemesi sağlanmaktadır.
 
@@ -43,7 +45,7 @@ Notus mimarisinde nonce sayısı yerine nonce dizisi hesaplanmaktadır. Nonce di
 
 Nonce hesaplama yönteminde farklılığa gidilmesindeki temel motivasyon, blok güvenliğini sağlamanın en bilinen yolu olan zorluk derecesini arttırmaktır. Ancak zorluk derecesini arttırdığımızda ise işlem süresi, işlemci gücü ve enerji ihtiyacı artış göstermektedir. Blok güvenliğinden ödün vermeden daha az işlemci gücü, daha hızlı ve daha az enerji sarfiyatı ile blok oluşturmayı mümkün kılmaktadır.
 
-### Kayar Hesaplama
+### Float Calculation
 
 SHA-256 Kayar hesaplamalı yöntem için adım sayısı (N) değerinin hesaplanması aşağıdaki formül ile hesaplanmaktadır.
 
@@ -83,7 +85,7 @@ Sonuc listesi bir ayraç ile birleştirilecek. Ayraç olarak: # gibi bir değer 
 
 8325 # 7965 # 4862 # …………………..……………… # 3258 # 1542 # 9104
 
-### Atlamalı Hesaplama
+### Jump Calculation
 
 SHA-256 Kayar hesaplamalı yöntem için adım sayısı (N) değerinin hesaplanması aşağıdaki formül ile hesaplanmaktadır.
 
@@ -117,7 +119,7 @@ Sonuç listesi bir ayraç ile birleştirilecek. Ayraç olarak: # gibi bir değer
 
 8325 # 7965 # 4862 # …………………..……………… # 3258 # 1542 # 9104
 
-## Madenci / Onaylayıcı
+## Miner/Validator (NoVa)
 
 Notus Mimarisinde kilit niteliğini taşıyan geliştirmelerden biri de madenci görev dağılımı yapısıdır. Ölçeklenme sorununa çözüm olarak ağın içerisinde yer alan madencilerin görev dağılım mimarisi tasarlanmıştır. Ölçeklenme sorunlarının temelinde bulunan ağ yoğunluğunu dağıtmanın en etkin yolu olarak işlem havuzlarının çoklanması ön görülmüştür.
 
@@ -143,7 +145,7 @@ Mimari 3 halka şeklinde tasarlanmış olup içten dışa doğru şu şekilde s�
 
    Network içerisinde üretilen tüm blok imzalarını tutan ancak yeni blok oluşturmayan düğüm türünü temsil etmektedir.
 
-## Madenci / Validator Sıralaması
+## Miner/Validator Rank (NoVa)
 
 Notus Network ağına işlem doğrulama amacıyla katılan her düğüm bir cüzdan adresi sahibi olmak zorundadır. Bu cüzdan adresi birinci olarak işlem doğrulayıcının, yaptığı işlemler sonucunda elde ettiği Coin’lerin aktarılacağı hesabı belirler. Bir diğer kullanım yeri ise doğrulayıcıların hangi sıra ile işlem yapacağının belirlenmesidir.
 
@@ -163,7 +165,7 @@ Cüzdan adreslerinin değişimi tamamlandığında:
 - Her düğüm kendine ayrılan süre içinde işlemi tamamlamazsa tüm düğümler geçerli blok için sıralanmış listedeki diğer düğüme gider.
 - Kendisine belirlenen süre içinde 3 kere blok oluşturma işlemini teslim etmeyen düğüm, diğer düğümler tarafından 1 saatlik ağdan dışlama işlemine tabi tutulur.
 
-## Sanal Makine
+## Virtual Machine
 
 Günümüz Akıllı kontratları EVM(Ethereum Virtual Machine) temelli geliştirilmektedir. Bunun bazı avantajları bulunmaktadır. Bu avantajların başında 1 byte’lık Opcode komut setlerinin (Assembly Dili) dönüşüm ve çalıştırma kolaylığı sağlaması gelmektedir. Beraberinde gelen dezavantaj ise hem Solidity programlama dilinin geliştiricisinin azlığı, hem de bu azlık sebebiyle hack olaylarına neden olabilen yapısı gereği yeni bir programlama dili ve yapı gerektirmektedir.
 
