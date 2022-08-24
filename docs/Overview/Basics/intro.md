@@ -1,7 +1,7 @@
 # General Design of Notus Network
 
 :::note
-Currently, this documentation is under construction. It may contain word correct or incorrect information.
+Currently, this documentation is in the draft stage. It may contain word correct or incorrect information.
 :::
 
 ## Transaction Pools
@@ -39,83 +39,83 @@ The process of grouping transactions during block creation works as tracks:
 
 ## Nonce Calculation
 
-Blok zincirinde oluşturulan her blok için hesaplanması gereken sayı nonce değeri olarak bilinmektedir. Bu değer Hash algoritması ile hesaplanmakta olup, blok doğruluğunu sağlamaktadır. Nonce değeri her blok için özel olarak hesaplandığı için içerik bütünlüğünü garanti etmektedir. Bu sayede özet algoritmalarının “_Collision_” olarak adlandırılan çakışma sonuçlarından da etkilenmemesi sağlanmaktadır.
+The number that must be calculated for each block created in the blockchain is known as the nonce value. This value is calculated with the Hash algorithm and ensures block accuracy. Since the nonce value is calculated specifically for each block, it guarantees content integrity. In this way, it is ensured that the hash algorithms are not affected by the "Collision" results.
 
-Notus mimarisinde nonce sayısı yerine nonce dizisi hesaplanmaktadır. Nonce dizisi hesaplanırken 2 farklı yöntem(Patent Aşamasında) kullanılarak oluşturulmaktadır. Bunlardan birincisi “_Kayar Hesaplama_” olarak adlandırılan yöntemdir. Nonce dizisi hesaplanırken kullanılan ikinci yöntem ise “_Atlamalı Hesaplama_” olarak adlandırılan yöntemdir.
+In the Notus architecture, the nonce array is calculated instead of the nonce number. While calculating the Nonce array, it is created using 2 different methods. The first of these is called “Float Calculation” and the second method is called “Jump Calculation”.
 
-Nonce hesaplama yönteminde farklılığa gidilmesindeki temel motivasyon, blok güvenliğini sağlamanın en bilinen yolu olan zorluk derecesini arttırmaktır. Ancak zorluk derecesini arttırdığımızda ise işlem süresi, işlemci gücü ve enerji ihtiyacı artış göstermektedir. Blok güvenliğinden ödün vermeden daha az işlemci gücü, daha hızlı ve daha az enerji sarfiyatı ile blok oluşturmayı mümkün kılmaktadır.
+The main reason for designing a different structure in the Nonce calculation method is to increase the difficulty level of block security. However, when we increase the difficulty level, there is transaction time, processor power, and more energy consumption. With the "Float Calculation" and "Jump Calculation" structures developed by Notus, block creation operations can be performed without sacrificing security, with less processor power, faster transaction time, and consuming less energy.
 
 ### Float Calculation
 
-SHA-256 Kayar hesaplamalı yöntem için adım sayısı (N) değerinin hesaplanması aşağıdaki formül ile hesaplanmaktadır.
+SHA-256 for the "Float Calculation" method; the calculation number of steps (N) values is calculated with the below formula.
 
 N = (α – β) + 1
 
-α = Hash algoritmasının hex uzunluğu
+α = Hex length of the hash algorithm
 
-β = zorluk derecesi uzunluğu
+β = Difficulty level length
 
 ---
 
-Kayar nonce hesaplaması için örneğin;
+Example for Float Calculation;
 
-Oluşturulacak blok için SHA-256 özet algoritmasının kullanıldığı senaryoda
+Using the SHA-256 hash algorithm for the new block created
 
-![Kayar Hesaplama](/img/whitepaper/kayar.jpg)
+![Float Calculation](/img/whitepaper/float_calculation.jpg)
 
-Bulunan sayı
+Steps
 
-1.Adım için: 8.325
+For Step 1: 8.325
 
-2.Adım için: 7.965
+For Step 2: 7.965
 
-3.Adım için: 4.862
+For Step 3: 4.862
 
 …….
 
 ……
 
-(N-2). Adım için: 3.258
+For steps (N-2): 3.258
 
-(N-1). Adım için: 1.542
+For steps (N-1): 1.542
 
-(N). Adım için: 9.104
+For steps (N): 9.104
 
-Sonuc listesi bir ayraç ile birleştirilecek. Ayraç olarak: # gibi bir değer kullanılabilecektir.
+The result list will be combined with a separator. A value such as # can be used as a separator.
 
 8325 # 7965 # 4862 # …………………..……………… # 3258 # 1542 # 9104
 
 ### Jump Calculation
 
-SHA-256 Kayar hesaplamalı yöntem için adım sayısı (N) değerinin hesaplanması aşağıdaki formül ile hesaplanmaktadır.
+SHA-256 for the "Jump Calculation" method; the calculation number of steps (N) values is calculated with the below formula.
 
 N = Ceil(α – β)
 
-α = Hash algoritmasının hex uzunluğu
+α = Hex length of the hash algorithm
 
-β = Zorluk derecesi uzunluğu
+β = Difficulty level length
 
-![Atlamali Hesaplama](/img/whitepaper/atlamalı.jpg)
+![Jump Calculation](/img/whitepaper/jump_calculation.jpg)
 
-Bulunan sayı
+Steps
 
-1.Adım için: 8.325
+For Step 1: 8.325
 
-2.Adım için: 7.965
+For Step 2: 7.965
 
-3.Adım için: 4.862
+For Step 3: 4.862
 
 …….
 
 ……
 
-(N-2). Adım için: 3.258
+For steps (N-2): 3.258
 
-(N-1). Adım için: 1.542
+For steps (N-1): 1.542
 
-(N). Adım için: 9.104
+For steps (N): 9.104
 
-Sonuç listesi bir ayraç ile birleştirilecek. Ayraç olarak: # gibi bir değer kullanılabilecektir.
+The result list will be combined with a separator. A value such as # can be used as a separator.
 
 8325 # 7965 # 4862 # …………………..……………… # 3258 # 1542 # 9104
 
