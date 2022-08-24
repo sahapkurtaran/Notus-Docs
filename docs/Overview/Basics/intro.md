@@ -10,9 +10,9 @@ The main focus of Notus architecture is task distribution architecture for miner
 
 Multiple Transaction Pools Benefits
 
-· Unlimited transaction skill
-· Quick access to transactions by Miners/Verifiers
-· Minimum network traffic density
+· Unlimited transaction skill <br>
+· Quick access to transactions by Miners/Verifiers <br>
+· Minimum network traffic density <br>
 
 ## Complex Block Architecture
 
@@ -22,18 +22,18 @@ In the Notus architecture, each ring can represent a different transaction type.
 
 For example;
 
-· Block number 1; receive payment transactions,
-· Block number 2; It may contain metadata where the NFT image is stored,
-· Block number 3; may include smart contracts,
-· Block number 4; account security data etc. may contain.
+· Block number 1; receive payment transactions,  <br>
+· Block number 2; It may contain metadata where the NFT image is stored,  <br>
+· Block number 3; may include smart contracts,  <br>
+· Block number 4; account security data etc. may contain.  <br>
 
 The Notus network is designed to host large raw data such as files and similar on different micro chains to reduce the density of the Mainnet.
 
 The process of grouping transactions during block creation works as tracks:
 
-· If the block type is the same, transactions are taken from the pool before the specified time is exceeded, and a block is created with the maximum number of transactions and added to the chain.
-· When different types of transactions accumulate in the pool, priority is given to the transaction of the first type. If the following transaction types are the same, they are saved in the same block within the maximum block production time and added to the chain.
-· The behavior of other transaction types is also done by tracking this structure.
+· If the block type is the same, transactions are taken from the pool before the specified time is exceeded, and a block is created with the maximum number of transactions and added to the chain.  <br>
+· When different types of transactions accumulate in the pool, priority is given to the transaction of the first type. If the following transaction types are the same, they are saved in the same block within the maximum block production time and added to the chain.  <br>
+· The behavior of other transaction types is also done by tracking this structure.  <br>
 
 ![Block Architecture](/img/whitepaper/block_architecture.jpg)
 
