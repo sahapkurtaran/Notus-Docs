@@ -2,37 +2,42 @@
 slug: /
 ---
 
-# Genel Bakış
+# Overview
 
-:::note
-Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış bilgiler bulundurabilir.
+::: note
+Currently this documentation is under construction. It may contain word errors or incorrect information.
 :::
 
-## Giriş
+## Introduction
 
-Notus Network, ölçeklenme ve uygulanabilirlik sorunlarına farklı bir bakış açısı sunan merkeziyetsiz bir blok zinciri platformudur.Ödeme işlemlerini de içeren Notus Network; yeni nesil web çözümlerini, işlem yükünü ağ içerisinde konsensus dahilinde dağıtarak işlemlerin hızlıca tamamlanmasına olanak tanımaktadır.
+Notus Network is a decentralized blockchain platform that offers a different perspective on scaling and applicability issues. It allows transactions to be completed quickly by distributing payment transactions, new generation Web3 solutions and transaction load within the network within a consensus.
 
-## Anahtar Özellikler
+## Key Features
 
-### Ölçeklenebilirlik
+### Scalability
 
-Günümüz platformlarının en büyük sorunlarından biri, işlem yoğunluklarının oluşturduğu darboğazın aşılamamasıdır. Bu sorunun temelinde;
+One of the biggest problems of today's platforms is that the bottleneck created by transaction density cannot be overcome.
 
-- belirli bir zaman aralığında yapılan işlem yoğunluğunun artması,
-- işlem havuzlarının sahip olduğu sınırlama,
-- “Madenci / Doğrulayıcılar”ın bu işlemlere cevap verme esnasında yüksek işlem ücretlerini tercih ederek taban fiyatını seçen kullanıcıların işlemlerini arka sıralara atması ve işlem miktarı arttıkça bu işlemlerin tamamlanmakta gecikmesi,
-- “Madenci / Doğrulayıcılar”ın birbirleri ile rekabet içinde olmaları neticesinde blokların benzer blokların ağ içerisinde birden fazla kez oluşturulma sürecine girilerek tamamlanma sürelerinin uzaması,
-- blok içerisine eklenebilen işlem sayısında sınırın bulunması
+On the basis of this problem;
 
-gibi sebepler yer almaktadır.
+· Increasing the intensity of the transaction in a certain time period,
 
-Gözlemlenmiş olan bu problemleri çözebilmek adına “işlem havuzu”, tüm madencilerin de dahil olacağı şekilde dağıtık bir biçimde tasarlanmıştır. Ana düğümde “işlem havuzu” bulunmasına rağmen tüm işlemler diğer düğümlere de gönderilebilmektedir.
+· Limitation of transaction pools,
 
-Her blok içerisine eklenecek kayıtlar için herhangi bir üst sınır bulunmamaktadır. Blok oluşturma süresi olarak 0,2 saniye sınırı temel alınmaktadır. Bu sürenin düşük tutulmasındaki temel gerekçe, yapılan işlemin tüm düğümlere dağılma süresinin de hesaba katılması olmaktadır.
+· "Miners / Validators" prefer high transaction fees while responding to these transactions, and users who choose the base price put their transactions in the back row and these transactions are delayed in completing as the amount of transactions increases,
 
-Ölçeklenebilirliğin uygulanabilir olması için her “Madenci/ Doğrulayıcı” bir sıralama dahilinde büyük bir ekip olarak çalışmaktadırlar. “Madenci / Doğrulayıcı”ların ekip olarak çalışabilmelerinin altın kuralı sıra ile işlem yapmalarından geçmektedir.
+· As a result of the "Miners / Validators" in competition with each other, the completion times of the blocks are prolonged by entering the process of creating similar blocks more than once in the network,
 
-Madenciler bir protokol dahilinde ağa dahil olarak tüm işlemleri sıra ile yapmaktadır. Diğer düğümler yapılan işlemleri doğrulamakta ve zincire eklemektedirler.
+· Limit on the number of transactions that can be added to the block
+
+
+In order to solve these observed problems, the “transaction pool” is designed in a distributed manner, including all Miners/Validators. Although the master node has a "transaction pool", all transactions can be sent to other nodes.
+
+There is no upper limit for the transaction information to be added to each block. The block creation time is based on a 0.2 second limit. The main purpose of keeping this time low is to take into account the distribution time of the transactions to all nodes.
+
+In order for scalability to be applicable, each “Miner/Validators” works as a large team in a sequence. The golden rule for “Miners / Validators” to work as a team is to operate in a row.
+
+"Miners/Validators" perform all transactions sequentially by being included in the network within a protocol. Other nodes verify transactions and add them to the chain.
 
 ### Düşük Karbon Ayak İzi
 
