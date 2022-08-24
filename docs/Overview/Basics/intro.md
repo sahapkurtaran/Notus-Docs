@@ -75,11 +75,11 @@ For Step 3: 4.862
 
 ……
 
-For steps (N-2): 3.258
+For step (N-2): 3.258
 
-For steps (N-1): 1.542
+For step (N-1): 1.542
 
-For steps (N): 9.104
+For step (N): 9.104
 
 The result list will be combined with a separator. A value such as # can be used as a separator.
 
@@ -109,11 +109,11 @@ For Step 3: 4.862
 
 ……
 
-For steps (N-2): 3.258
+For step (N-2): 3.258
 
-For steps (N-1): 1.542
+For step (N-1): 1.542
 
-For steps (N): 9.104
+For step (N): 9.104
 
 The result list will be combined with a separator. A value such as # can be used as a separator.
 
@@ -121,49 +121,50 @@ The result list will be combined with a separator. A value such as # can be used
 
 ## Miner/Validator (NoVa)
 
-Notus Mimarisinde kilit niteliğini taşıyan geliştirmelerden biri de madenci görev dağılımı yapısıdır. Ölçeklenme sorununa çözüm olarak ağın içerisinde yer alan madencilerin görev dağılım mimarisi tasarlanmıştır. Ölçeklenme sorunlarının temelinde bulunan ağ yoğunluğunu dağıtmanın en etkin yolu olarak işlem havuzlarının çoklanması ön görülmüştür.
+The main focus of Notus architecture is task distribution architecture for miners/validators in the network as a solution to the scaling problem, which is one of the main problems of blockchain platforms. The most effective way to overcome the bottleneck caused by network density underlying scaling problems has been considered to be the design of multiple transaction pools.
 
-![Blok Node Mimarisi](/img/whitepaper/blok_node_mimarisi.jpg)
 
-Mimari 3 halka şeklinde tasarlanmış olup içten dışa doğru şu şekilde sıralanmaktadır:
+![Block Node Architecture](/img/whitepaper/block_node_architecture.jpg)
+
+The Notus architecture is designed as 3 rings and is ordered from the inside out as follows:
 
 1. Master Node
 
-   Notus Network tarafından kurulan madencileri temsil eder. Bu düğümlerin IP adresleri kaynak kodun içerisinde gömülü olarak gelmektedir.
+  Represents nodes set up by Notus Network and nodes with fixed IP. The IP addresses of these nodes are embedded in the source code.
 
 2. Main Node
 
-   Tanımlanmış sistem konfigürasyonuna sahip madencileri temsil eder. Bu madencilerin IP adresleri her düğüm tarafından yerel düğümlerin içinde saklanmaktadır.
+   Represents miners with a defined system configuration. The IP addresses of these miners are stored by each node inside the local nodes.
 
-3. Replicant Node
+3. Archive Node
 
    a. Full Node
 
-   Network içerisinde üretilen tüm blok kopyalarını tutan ancak yeni blok oluşturmayan düşük sistem konfigürasyonuna sahip düğüm türünü temsil etmektedir.
+   Represents a low system configuration node type that keeps all copies of blocks generated in the network but does not create new blocks.
 
    b. Light Node
 
-   Network içerisinde üretilen tüm blok imzalarını tutan ancak yeni blok oluşturmayan düğüm türünü temsil etmektedir.
-
+   It represents the node type that keeps all the block signatures produced in the network but does not create new blocks.
+   
 ## Miner/Validator Rank (NoVa)
 
-Notus Network ağına işlem doğrulama amacıyla katılan her düğüm bir cüzdan adresi sahibi olmak zorundadır. Bu cüzdan adresi birinci olarak işlem doğrulayıcının, yaptığı işlemler sonucunda elde ettiği Coin’lerin aktarılacağı hesabı belirler. Bir diğer kullanım yeri ise doğrulayıcıların hangi sıra ile işlem yapacağının belirlenmesidir.
+Every node joining the Notus network for transaction verification purposes must have a wallet address. This wallet address primarily determines the account to which the token rewards earned by the validators as a result of their transactions will be transferred. As a secondary use, it determines the order in which validators will operate.
 
-Notus Network işlem doğrulayıcılarının verimli çalışmalarını sağlamak için tüm işlemleri doğrulayıcıların sırayla doğrulama yapacağı şekilde tasarlanmıştır. Bu işlem şu adımlar halinde gerçekleşir.
+Notus Network places the validators in a queue to ensure that the validators work efficiently and ensures that all transactions are done in that order. The operation steps are as follows.
 
-Her düğüm, kendi cüzdan adresinin diğer düğümlerle paylaştığı gibi diğer düğümlerinde cüzdan adreslerini ister.
+Each node shares its wallet address with other nodes and requests wallet addresses on its other nodes.
 
-![İşlem Protokolü](/img/whitepaper/işlem_protokolü.jpg)
+![Transaction Protocol](/img/whitepaper/transaction_protocol.jpg)
 
-Cüzdan adreslerinin değişimi tamamlandığında:
+When the exchange of wallet addresses is complete:
 
-- Tüm cüzdan adresleri 58’lik sayı sisteminden 10’luk sayı sistemine çevrilir.
-- Tüm cüzdan adresleri benzersiz olacağından dolayı ortaya çıkacak sayılarda da çakışma oluşmayacaktır.
-- Tüm cüzdan adresleri küçükten büyüğe doğru sıralanır.
-- Listeye yeni eklenen düğüme ait cüzdan adresi 2 tur boyunca işlem yapamaz.
-- Her düğüm için ayrılan süre 0,2 Saniye’dir
-- Her düğüm kendine ayrılan süre içinde işlemi tamamlamazsa tüm düğümler geçerli blok için sıralanmış listedeki diğer düğüme gider.
-- Kendisine belirlenen süre içinde 3 kere blok oluşturma işlemini teslim etmeyen düğüm, diğer düğümler tarafından 1 saatlik ağdan dışlama işlemine tabi tutulur.
+- All wallet addresses are converted from the 58 number system to the 10 number system. <br>
+· Since all wallet addresses will be unique, there will be no conflicts in the numbers that will appear.  <br>
+· All wallet addresses are sorted from smallest to largest.  <br>
+· The wallet address of the newly added node to the list cannot be processed for 2 rounds.  <br>
+· The time allocated for each node is 0.2 Seconds.  <br>
+· If each node does not complete the transaction within the allotted time, all nodes go to the other node in the sorted list for the current block.  <br>
+· The node that does not deliver the block creation process 3 times within the specified time is subject to a 1-hour exclusion from the network by other nodes.  <br>
 
 ## Virtual Machine
 
