@@ -130,7 +130,7 @@ The Notus architecture is designed as 3 rings and is ordered from the inside out
 
 1. Master Node
 
-  Represents nodes set up by Notus Network and nodes with fixed IP. The IP addresses of these nodes are embedded in the source code.
+   Represents nodes set up by Notus Network and nodes with fixed IP. The IP addresses of these nodes are embedded in the source code.
 
 2. Main Node
 
@@ -158,7 +158,7 @@ Each node shares its wallet address with other nodes and requests wallet address
 
 When the exchange of wallet addresses is complete:
 
-- All wallet addresses are converted from the 58 number system to the 10 number system. <br>
+· All wallet addresses are converted from the 58 number system to the 10 number system. <br>
 · Since all wallet addresses will be unique, there will be no conflicts in the numbers that will appear.  <br>
 · All wallet addresses are sorted from smallest to largest.  <br>
 · The wallet address of the newly added node to the list cannot be processed for 2 rounds.  <br>
@@ -168,15 +168,13 @@ When the exchange of wallet addresses is complete:
 
 ## Virtual Machine
 
-Günümüz Akıllı kontratları EVM(Ethereum Virtual Machine) temelli geliştirilmektedir. Bunun bazı avantajları bulunmaktadır. Bu avantajların başında 1 byte’lık Opcode komut setlerinin (Assembly Dili) dönüşüm ve çalıştırma kolaylığı sağlaması gelmektedir. Beraberinde gelen dezavantaj ise hem Solidity programlama dilinin geliştiricisinin azlığı, hem de bu azlık sebebiyle hack olaylarına neden olabilen yapısı gereği yeni bir programlama dili ve yapı gerektirmektedir.
+Today, smart contracts are developed based on EVM (Ethereum Virtual Machine). This has some advantages. One of these benefits is the ease of conversion and execution for 1-byte Opcode instruction sets (Assembly). The disadvantage is that the developers and experts of the Solidity programming language are few, and the fact that the Solidity programming language causes hacking incidents clearly shows the need for a new programming language and structure.
 
-Notus, Akıllı Kontratların yazımı için hem topluluk hacmi hem de kolay öğrenimi göz önünde bulundurularak en yaygın kullanıma sahip JavaScript dili tercih edilmiştir.
+Notus recommends choosing and using the widely used JavaScript programming language for writing smart contracts, considering both its community size and its easy learning. It is planned to create a Double-Opcode Notus Virtual Machine for the purpose of adding new commands and backward support to the EVM.
 
-Eklenebilecek komut çeşitliliği ve EVM’ ye geriye dönük destekleme amacıyla Double-Opcode Notus Virtual Machine oluşturulması planlanmaktadır.
+## State Structure
 
-## Durum Yapılı Blok Yapısı
-
-Blok zincirinin genel hatları akıllı kontrat ve coin/token transferi üzerine kurgulanmıştır. Akıllı kontrat yapılabilecek işlem çeşitliliği için programlama bilgisi gerektirmektedir. Akıllı kontratların kullanımı arttıkça yazılan kodların açıkları da günden güne belirginleşmeye başladı. Notus Network ile geliştirdiğimiz Karma Blok mimari sayesinde belirginleşen ihtiyaçlara cevap verebilen blok türlerini zincire eklemek, oluşturma açısından geliştiriciye fayda sağlarken, güvenlik açısından da kullanıcıya fayda sağlamaktadır. Durum Bazlı Blok Mimarisi’nin en büyük örneği, token oluşturma yapısıdır. Bu yapı için mimariye eklenen basit ara yüz ile "_Sıfır Kod_" ile token oluşturmak için kontrat oluşturma gerekliliği ortadan kalkmaktadır.
+Blockchain technology outlines are built on smart contracts and coin/token transfers. Programming knowledge is required for the variety of transactions that can be made with smart contracts. As the use of smart contracts increased, the vulnerabilities of the written codes began to increase day by day. Adding block types to the chain that can meet the specific needs thanks to the Mixed Block architecture we developed with Notus Network provides benefits to the developer in terms of creation and to the user in terms of security. The biggest example of State-Based Block Architecture is the token generation structure. With the simple interface added to the architecture for this structure, the necessity of creating a contract to create tokens with "Zero Code" is eliminated.
 
 ## Güvenli NFT
 
