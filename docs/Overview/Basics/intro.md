@@ -1,12 +1,10 @@
-# Temel Bileşenler
+# General Design of Notus Network
 
 :::note
-Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış bilgiler bulundurabilir.
+Currently, this documentation is under construction. It may contain word errors or incorrect information.
 :::
 
-Notus Network Platformu belirlediği temel sorunlara çözüm olarak farklı teknik, mimari yöntem ve geliştirmeler ekleyerek sistemi daha güncel ve erişilebilir hale getirmek üzere çalışmaktadır.
-
-## İşlem Havuzları
+## Transaction Pools
 
 Notus Mimarisinin temelde odaklandığı sorunlardan birisi olan madencilerin ölçeklenme sorununa çözüm olarak ağın içerisinde yer alan madencilerin görev dağılım mimarisi tasarlanmıştır. Ölçeklenme sorunlarının temelinde bulunan ağ yoğunluğunu dağıtmanın en etkin yolu olarak işlem havuzlarının çoklanması ön görülmüştür.
 
@@ -16,7 +14,7 @@ Notus Mimarisinin temelde odaklandığı sorunlardan birisi olan madencilerin ö
 - Madenciler / Validatörlerin işlemlere hızlı erişimi,
 - Ağ trafik yoğunluğunun dağıtılması gibi farklı avantajlar sağlamaktadır.
 
-## Karma Blok
+## Complex Block Architecture
 
 Günümüzde blok zinciri ağlarında ödeme işlemleri ve akıllı kontratlar olmak üzere 2 blok türü bulunmaktadır. Tüm ağ bu blokları işlemek üzere tasarlanmış olmasına karşın bu yapı farklı seviyedeki farklı ihtiyaçları karşılayamamaktadır. Notus mimarisi tasarlanırken hem kapalı ağ için hem de online kurulan bir ağın blok zinciri ihtiyaçlarını tek bir ağ ile çözülmesi düşünülerek tasarlanmıştır.
 
