@@ -39,18 +39,20 @@ In order for scalability to be applicable, each “Miner/Validators” works as 
 
 "Miners/Validators" perform all transactions sequentially by being included in the network within a protocol. Other nodes verify transactions and add them to the chain.
 
-### Düşük Karbon Ayak İzi
+### Low Carbon Footprint
 
-Blok zinciri platformlarının küresel iklim değişikliği üzerinde de etkileri bulunmaktadır. Notus Network platformu bu payı en alt düzeye indirmek için nonce hesaplama işlemini yeniden tasarlamıştır. Burada kullanılan düşük zorluk düzeyinin oluşturduğu güvenlik zafiyeti nonce hesaplamasında geliştirilen bir yöntemle kapatılmıştır.
+Blockchain platforms also have effects on global climate change due to the high amount of energy they consume. Notus Network has designed the nonce calculation process from the ground up to minimize its low carbon footprint. The low level of difficulty in this redesigned structure causes a security vulnerability. However, the security vulnerability has been eliminated with a different method developed for nonce calculation.
 
-### Tam Merkeziyetsizlik
+### Full Decentralization
 
-Notus Network’ün hedeflerinin temelinde “Tam Merkeziyetsizlik” kavramı bulunmaktadır. Temel amacımız transfer işlemlerinden karar mekanizmasına kadar tüm sürecin merkeziyetsiz bir şekilde sürdürülmesidir. Bu kapsamda Notus Network ağına dahil olan kullanıcıların işlemlerini doğrudan doğrulayıcı / madencilere gönderebilmesinin önü açılmıştır.
+The concept of “Full Decentralization” is at the heart of Notus Network's goals. Our main goal is to maintain the entire process from the transfer process to the decision mechanism in a decentralized manner. In this direction, all users included in Notus Network will have the experience of sharing their transactions directly and with the validators they want.
 
-### Kolay Kullanım
+### Simple Use
 
-Akıllı kontratların yaygınlaşması ile birlikte blok zinciri ağlarının da kullanımı günden güne artmaya devam etmektedir. Notus Network ile birlikte akıllı kontratlarla oluşturulan ve genel kullanıma uygun tüm Token, NFT vb. tüm özellikler state geliştirmesi ile ağ’ın kaynak koduna dahil edilmesi hedeflenmiştir. Bu sayede kod açıkları ile karşılaştırmadan kolay entegrasyon geliştirme süreci hedeflenmiştir.
+With the spread of Web3 applications, the use of blockchain networks and smart contracts running on the blockchain continues to increase day by day.
+In order to make the process more efficient, Notus Network has integrated common applications such as Token, NFT, etc., created with smart contracts, into the source code with state development. State development enables project developers to minimize vulnerabilities while writing code and easily start the project development process.
 
-### Hızlı İşlem
 
-Günümüzde Visa gibi ödeme sistemlerinin saniyede 65000 işlem alabilmektedir. Notus Network bu sayıyı hedef olarak belirlemiştir. Notus ağının çok sayıda kullanıcıya hızlı ve kolay bir şekilde işlem yapmasını hedeflemektedir.
+### Speed Transactions
+
+Today, Visa claims it can support 1,700 transactions per second and 24,000 TPS, while Mastercard claims it can support 5,000 transactions. Notus Network aims to enable users to perform more transactions quickly and easily in terms of transactions per second.
