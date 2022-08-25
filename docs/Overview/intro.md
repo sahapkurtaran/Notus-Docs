@@ -5,7 +5,7 @@ slug: /
 # Overview
 
 ::: note
-Currently this documentation is under construction. It may contain word errors or incorrect information.
+Currently, this documentation is in the draft stage. It may contain word correct or incorrect information
 :::
 
 ## Introduction
