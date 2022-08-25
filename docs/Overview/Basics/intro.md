@@ -176,9 +176,12 @@ Notus recommends choosing and using the widely used JavaScript programming langu
 
 Blockchain technology outlines are built on smart contracts and coin/token transfers. Programming knowledge is required for the variety of transactions that can be made with smart contracts. As the use of smart contracts increased, the vulnerabilities of the written codes began to increase day by day. Adding block types to the chain that can meet the specific needs thanks to the Mixed Block architecture we developed with Notus Network provides benefits to the developer in terms of creation and to the user in terms of security. The biggest example of State-Based Block Architecture is the token generation structure. With the simple interface added to the architecture for this structure, the necessity of creating a contract to create tokens with "Zero Code" is eliminated.
 
-## Micro Chain
+## Microchain Moduls
 
-Notus platformu, tasarlanma aşamasında farklı ihtiyaçlar göz önünde bulundurularak tasarlanmıştır. Değişen ve şekillenen farklı ihtiyaçlara cevap verebilmesi için platform farklı alt mikro zincirler eklenmiştir. Platform içerisinde kullanılmak üzere farklı mikro zincirler tasarlanmıştır. Örneğin; geleneksel blok zincirlerinde coin veya token transferi esnasında açıklama metni yazılamamaktadır. Bu eksikliği gidermek için 4 numaralı mikro zincir bu işlem için atanmıştır. Böylece ana zincir üzerinde yoğunluk azaltılmış olup işlemlerde ilave bilgilendirme de sağlanmış olmaktadır. Bu mikro zincirler ile ilgili detaylı bilgi ayrıca detaylandırılacaktır.
+The Notus blockchain architecture has been developed to meet different needs during the design phase. Different sub-micro chains have been added to the platform in order to respond to different changing and shaped needs and to move more dynamically. Micro chains, which give Notus Network a modular structure, can be shaped according to the situation by increasing or decreasing the number of micro chains depending on the operation on the platform together with the network upgrade. The task distribution of these micro chains is considered as the division of different types of transactions (Coin/token transfer, NFT, smart contracts, etc.) in other blockchain platforms into separate micro chains.
+
+For example;
+In other blockchains, the explanation text cannot be written during coin or token transfer. To make up for this shortcoming, the number 4 microchain has been assigned for this process. Thus, the density on the main chain is reduced and additional information is provided in the transactions. Detailed information about micro chains will be given separately.
 
 ## Safe NFT
 
@@ -192,13 +195,15 @@ Leonardo Da Vinci's Mona Lisa in the Louvre museum can be given. Almost all muse
 
 ## Wallet
 
-Cüzdanlar Notus Ağı üzerindeki en temel bileşenlerdir. Notus Ağı'nın üzerindeki bütün işlemler(Transfer, Akıllı Kontrat, NFT vb.) için cüzdan kullanılır.
+Wallets are one of the most fundamental building blocks that enable users to experience blockchain. The main way users can transact on the blockchain is through digital signatures given the ability to be used with these wallets. Users sign transactions using their private keys. This signing and verification is done using the relevant public keys (Public and Private Key). And the transaction is executed.
+
+As in other blockchain networks, all transactions (Transfer, Smart Contract, NFT, etc.) on Notus Network are made through wallets.
 
 ### How to create a Notus Wallet?
 
 #### Creating Keywords
 
-Cüzdan adresi oluşturmak için BIP39 standart kelime listesi kullanılır. Diğer ağlar 12 veya 24 kelimelik listeler kullanmaktadırlar. Notus Ağı bu sayıyı standart olarak 16 kabul eder. 16 tane kelimeyi kullanarak bir cüzdan adresi oluşturur. İçerisinde aynı kelimeleri bulundurmaz.
+The BIP39 standard word list is used to generate the wallet address. Other networks use lists of 12 or 24 words. Notus Network accepts this number as 16 words as standard. Using 16 words, it creates a wallet address where the same words cannot be found together.
 
 ```js
 function SeedPhraseList(): string[] {
@@ -242,24 +247,24 @@ function Bip39Keyword(Bip39WordIndexNo: number): string {
 
 #### Private Key
 
-Private Key(Özel Anahtar) Prime256v1 algoritması kullanıldığından dolayı 256 bitlik(32 bytelık) bir anahtardır.
+Private Key is a 256-bit (32-byte) key because the Prime256v1 algorithm is used.
 
-Oluşturulan kelimeler sınırlayıcı bir karakter ile birleştirilir. Bu sınırlayıcı karakter herhangi bir harf veya sayı olamaz.
+The formed words are combined with a delimiter character. This delimiter cannot be any letter or number.
 
-Örnek:
-
-```
-Girdi = "giggle","injury","bracket","treat","olive","cave","sheriff","kiwi","grow","human","appear","fat","pulse","radar","method","myth"
-Çıktı = giggle:injury:bracket:treat:olive:cave:sheriff:kiwi:grow:human:appear:fat:pulse:radar:method:myth
-```
-
-Oluşturulan kelimelerin teker teker MD5 hashi alınır.
-
-Örnek:
+Example:
 
 ```
-Girdi = "giggle","injury","bracket","treat","olive","cave","sheriff","kiwi","grow","human","appear","fat","pulse","radar","method","myth"
-Çıktı
+Input = "giggle","injury","bracket","treat","olive","cave","sheriff","kiwi","grow","human","appear","fat","pulse","radar","method","myth"
+Output = giggle:injury:bracket:treat:olive:cave:sheriff:kiwi:grow:human:appear:fat:pulse:radar:method:myth
+```
+
+The MD5 hash of the generated words is taken one by one.
+
+Example:
+
+```
+Inpu = "giggle","injury","bracket","treat","olive","cave","sheriff","kiwi","grow","human","appear","fat","pulse","radar","method","myth"
+Output
 -
 719a464002575321cf4e1b985ba98007
 7ff983fb58f776769fdfdc8faa69662b
@@ -279,54 +284,55 @@ ea9f6aca279138c58f705c8d4cb4b8ce
 9b87b1ff71e8b4a5a0711c3d82f5bcba
 ```
 
-Bütün kelimelerin birleşiminin SashaHash'i iki kez alınır.
+The SashaHash of the combination of all words is taken twice.
 
 ```js
 SashaHash(SashaHash(bütünKelimeler) + : + bütünKelimeler)
 ```
 
 ```
-Çıktı
+Output
 -
 7f74a2d907a8ee1a6cef35dd886247fec7e28403e4f101f5a5127c6ae0acdc2aa5981edf75bc056e98bc218443139232cea
 1fd53f1efe1753c34d2fbe055c0a23169134bc6ddf78d1f48838ab2d450364388ea91fcf1fafe6712291000917a56e19
 d151dc42a1391fc2a4d7a612484df3e06df6da950d31
 ```
 
-Bir döngüde üretilen MD5 hashleri ile üretilen sasha çıktısı toplanarak Sha1 hashi alınır ve hexi 2 küçültülür.
+The sasha output produced with the MD5 hashes produced in a loop is summed, and the Sha1 hash is taken and the hexi is reduced by 2.
 
 ```js
 hash[i] = shrinkHex(Sha1Hash(sashaHashOutput + : + hash[i]), 2)
 result += hash[i]
 ```
 
-Döngüden çıkan değer private key(özel anahtar) olarak alınır.
+The value that comes out of the loop is taken as a private key.
 
 ```
-Çıktı
+Output
 -
 7d9bdc8bb285bcc44d4805a5b3fc524194fe5305f6120e764f31ff00c244f915
 ```
 
 #### Public Key
 
-Public Key ["_Eliptic Curve Cryptography_"](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) algoritmasında Private Key kullanılarak X ve Y noktalarından oluşturulmuş bir adrestir. Bitcoinden farklı olarak Notus Network Prime256v1 algoritmasını kullanmaktadır.
+Public Key is an address created from X and Y points using Private Key. Unlike Bitcoin, Notus Network uses the Prime256v1 algorithm.
+["_Eliptic Curve Cryptography_" (https://en.wikipedia.org/wiki/Elliptic-curve_cryptography)
 
 ```
-Çıktı
+Output
 -
 19eb745ebf2864ee8bb21bf2617d073c3e4ae5b92ee40cd335260b80ddf1f29e63c9199d7692906c43f553de0ec812e2f0ab2560066956950c389c7b5985fe82
 ```
 
 #### Wallet Address
 
-Cüzdan adresi sayıların ve harflerin birleşiminden oluşan bir adrestir. Public Key birkaç adımdan geçirilerek cüzdan adresi oluşturulur.
+A wallet address is a combination of numbers and letters. The wallet address is created by passing the Public Key through several steps.
 
-Public Key'in x ve y noktalarının başına 0 eklenir.
+0 is added to the beginning of the x and y points of the Public Key.
 
 `publicCords = 0 + publicKey.X + 0 + publicKey.Y`
 
-Public Key'in Y değerin son harfi veya sayının 2 ile modu alınır. Public Key'in X değerinin başına eğer çıkan sonuç 0 ise 20, değil ise 30 eklenir.
+The mode of the Public Key with the last letter of the Y value or the number 2 is taken. If the result is 0, 20 is added to the beginning of the X value of the Public Key, otherwise 30 is added.
 
 ```js
 pubCorsMain =
@@ -335,35 +341,35 @@ pubCorsMain =
     : "030") + pubCorsX;
 ```
 
-Oluşturulan cüzdan adresinin ağ tipi, oluşturulacak cüzdan adresinin çıktısını da etkilemektedir.
-Network tiplerine göre değişiklik listesi:
+The network type of the created wallet address also affects the output of the wallet address to be created.
+Change list according to network types:
 
-| Network Tipi | Byte String | Network Tipi Yazısı |
+| Network Type | Byte String | Network Type Text |
 | :----------- | :---------- | :------------------ |
 | Mainnet      | 10          | NR                  |
 | Testnet      | 20          | NT                  |
 | Devnet       | 30          | ND                  |
 
-İlk olarak iki kez sasha hash alınır, hex'i 22 düşürülür. Sonuç olarak ilk hash elde edilir.
+First, the SashaHash is taken twice, reducing the hex by 22. As a result, the first hash is obtained.
 
 ```js
 hash1 = shrinkHex(SashaHash(SashaHash(pubCorsMain)), 22);
 ```
 
-Sonrasında tekrar iki kez sasha hash alınır, hex'i 4 düşürülür. Sonuç olarak ikinci hash elde edilir.
+Then again, the SashaHash is taken twice, its hex is reduced by 4. As a result, the second hash is obtained.
 
 ```js
 hash2 = shrinkHex(SashaHash(SashaHash(networkTypeByte + publicCords)), 4);
 ```
 
-Son işlem olarak elde edilen iki hash ve "_Network Type Byte_" toplanır. Toplanan değerin base58 encode değeri alınır ve başına "_Network Type String_" eklenir. Sonuç olarak cüzdan adresi elde edilir.
+The two hashes and "_Network Type Byte_" obtained as the last operation are summed. The base58 encoding of the aggregated value is taken and "_Network Type String_" is prepended. As a result, the wallet address is obtained.
 
 ```js
 walletKey = networkTypeString + bs58encode(networkTypeByte + hash1 + hash2, 36);
 ```
 
 ```
-Çıktı
+Output
 -
 NREAj7a29qz1GhXoX88ebRd7zMXtiWMyyy6QkG
 ```
