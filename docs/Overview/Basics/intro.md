@@ -384,23 +384,19 @@ Wallet holders authorize inheritance for the assets in their account, provided t
 
 The Heritage-Based wallet can also be used for different purposes.
 
-· It can be used as a bequest or donation of assets to private or corporate organizations in real terms.
-· It can be used for the certainty of the payment of the debt for future debt payments.
-· Offering a more secure payment infrastructure, it can enable people to move more comfortably and without a doubt.
+· It can be used as a bequest or donation of assets to private or corporate organizations in real terms. <br>
+· It can be used for the certainty of the payment of the debt for future debt payments. <br>
+· Offering a more secure payment infrastructure, it can enable people to move more comfortably and without a doubt. <br>
 
 For example;
-· Suppose John owns a wallet on the Notus network.
-· John chooses a different wallet as heir for the assets in his Notus wallet.
-· John chooses the date on which the assets in his wallet will be transferred to the heir wallet.
-· Even if John has forgotten the password of his wallet by the date he determined, his assets will be transferred.
-· John can use all his assets as he wishes by reaching the heir's wallet or transferring them to the person he chooses as heir.
+· Suppose John owns a wallet on the Notus network. <br>
+· John chooses a different wallet as heir for the assets in his Notus wallet. <br>
+· John chooses the date on which the assets in his wallet will be transferred to the heir wallet. <br>
+· Even if John has forgotten the password of his wallet by the date he determined, his assets will be transferred. <br>
+· John can use all his assets as he wishes by reaching the heir's wallet or transferring them to the person he chooses as heir. <br>
 
-### Time-Based Wallet
+### Time-Based Cold Wallet
 
-Yeni mimariyle birlikte "_Tarihli Soğuk Cüzdan_" kavramı ortaya çıkmıştır. Tarihli Soğuk Cüzdan'da verdiğiniz tarihe kadar hesabınız kilitlenir. Saldırganlar hesabınızın özel anahtarını bilseler bile verdiğiniz tarihe kadar işlem yapamazlar.
+Along with the new architecture it has designed, Notus has also made available a protected wallet structure called "Time-Based Wallet". Your wallet and all the assets in it are protected and locked until the date you set in Time-Based Wallet. Even if your wallet is taken over by malicious people and they know the private key of your account, they cannot make any transactions with the wallet until the date you specify. Using the Time-Based Wallet and Heritage-Based Wallet features at the same time will allow you to have highly protected wallets.
 
-Tarih verdiğinizde sizden en az 8 haneli ve en çok 32 haneli bir şifre girmeniz istenir. Girdiğiniz şifre verdiğiniz tarihe kadar kapalı olan hesabınızın, verdiğiniz tarihten sonraki ilk işlemi için gereklidir.
-
-### Cold Wallet
-
-Blok Zinciri dünyasındaki en önemli veri "Hesaba Ait Özel Anahtar" olarak bilinmektedir. Her ne kadar özel donanımsal cihazlar geliştirilse de bu cihazlar sadece özel anahtarınızın virüs veya saldırganlar tarafından ele geçirilmesini engellemesine rağmen hala Brute-Force (deneme yanılma) ihtimalîne karşı korunmasızdır. Eklenen her güncellemenin kaynağı, Notus ‘un sahip olduğu durum tabanlı blok mimarisidir. Bu mimari sayesinde getirilen yenilikle birlikte, kullanıcının isteği dahilinde kullanıcının hesabı, verdiği tarihler arasında ve verdiği şifre ile kilitlenir. Saldırganlar hesaba ait özel anahtarı bilseler bile hesabın içerisindeki bakiyeye ulaşamazlar.
+When you want to use Time-Based Wallet, you will be asked to set a password with a minimum of 8 digits and a maximum of 32 digits. The password you set is required for you to perform the first transaction you will take after logging into your account, which was locked on the wallet opening date. This extra layer of security takes the protection of the assets in your wallet one step further.
