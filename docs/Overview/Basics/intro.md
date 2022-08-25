@@ -172,35 +172,37 @@ Today, smart contracts are developed based on EVM (Ethereum Virtual Machine). Th
 
 Notus recommends choosing and using the widely used JavaScript programming language for writing smart contracts, considering both its community size and its easy learning. It is planned to create a Double-Opcode Notus Virtual Machine for the purpose of adding new commands and backward support to the EVM.
 
-## State Structure
+## State-Based Block Structure
 
 Blockchain technology outlines are built on smart contracts and coin/token transfers. Programming knowledge is required for the variety of transactions that can be made with smart contracts. As the use of smart contracts increased, the vulnerabilities of the written codes began to increase day by day. Adding block types to the chain that can meet the specific needs thanks to the Mixed Block architecture we developed with Notus Network provides benefits to the developer in terms of creation and to the user in terms of security. The biggest example of State-Based Block Architecture is the token generation structure. With the simple interface added to the architecture for this structure, the necessity of creating a contract to create tokens with "Zero Code" is eliminated.
-
-## Güvenli NFT
-
-Notus olarak NFT'lerin sadece görsel içerikli öğeler olmadığını düşünmekteyiz. NFT'lerin aslında doküman, ses, video görsel gibi bir süre farklı dijital materyal olabilecek potansiyele sahip olduğunu düşünmekteyiz. Ancak NFT tarafında en büyük sorun üçüncü parti entegrasyon çözümleri ile dijital materyallerin kopyalarının çok kolay bir şekilde kopyalanabileceği gerçeğine her gün tanık olmaktayız. Bu sebeple sadece bir mikro zincirimizi bu dijital içeriklerin şifreli olarak saklanması için tahsis ettik. Bu sayede Telifli halini herkes görebilirken gerçek halini sadece sahibi görebilmektedir. İnancımız odur ki bu güvenlik katmanı sayesinde NFT ekosistemi ses, müzik, sözleşme gibi bir sürü yeni kullanım alanına sahip olacaktır.
-
-## Veraset Sistemi
-
-Blok zinciri ile ortaya çıkan en büyük sorunlardan birisi de private key veya özel cümlelerin unutulması sorunudur. Sadece yirmi bir milyon adet üretilecek olan Bitcoin’de bile bir milyona yakın coin'in sahipleri tarafından şifreleri unutulduğu veya kaybedildiği için ulaşılamadığı tahmin ediliyor. Notus Network ile blok zinciri platformumuza dahil ettiğimiz “_Karma Blok_” ve “_Durum Bazlı Blok Mimarisi_” ile geliştirilen bir diğer özellik ise "_Veraset Sistemi_" 'dir. Bu özellik en genel haliyle şöyle işlemektedir:
-
-Kullanıcı, hesabındaki bakiyeleri belirli bir süre sonunda belirlediği bir başka hesaba aktarabilmektedir. Bu işlem “_Durum Tabanlı Blok Mimarisi”_ ile mümkün hale getirilmiştir olup ana hesaptaki şifre unutulsa bile işlem geçerli olmaktadır.
 
 ## Mikro Zincir
 
 Notus platformu, tasarlanma aşamasında farklı ihtiyaçlar göz önünde bulundurularak tasarlanmıştır. Değişen ve şekillenen farklı ihtiyaçlara cevap verebilmesi için platform farklı alt mikro zincirler eklenmiştir. Platform içerisinde kullanılmak üzere farklı mikro zincirler tasarlanmıştır. Örneğin; geleneksel blok zincirlerinde coin veya token transferi esnasında açıklama metni yazılamamaktadır. Bu eksikliği gidermek için 4 numaralı mikro zincir bu işlem için atanmıştır. Böylece ana zincir üzerinde yoğunluk azaltılmış olup işlemlerde ilave bilgilendirme de sağlanmış olmaktadır. Bu mikro zincirler ile ilgili detaylı bilgi ayrıca detaylandırılacaktır.
 
-## Borç Sistemi
+## Safe NFT
 
-Kripto paraların yaygınlaşması ile ortaya çıkan bir boşlukta kredi sistemi olarak gözlemlenmektedir. Tüm hesapların anonim olduğu bir ortamda elbette kredi sistemini geliştirmek mümkün olamamaktadır. Notus Network, NFT sahiplerinin kredi alabilmesini sağlayan bir kredi sistemine sahiptir. NFT sahiplerin dijital eserlerini teminat gösterebilmelerine imkân sağlayan mimari ile amaç Notus sahiplerinin likidasyon sorunlarına kolay çözüm getirmektir.
+At Notus, we believe that NFTs are not just visual elements.
+We think that NFTs actually consist of different digital materials such as documents, audio, video and visuals, but their use case is limited. We witness that the biggest problem in all current NFT projects is that digital materials are easily copied and recreated on other platforms with third-party integration solutions.
 
-## Cüzdan
+A separate structure has been added as a state-based NFT micro chain within the Notus architecture. With this state-based structure, digital content will be stored in an encrypted manner. In this way, only the owner of the NFT will be able to see the original NFT, while others will be able to see a replica of the NFT. Thanks to this security layer, Notus ensures that the NFT ecosystem (such as audio, video, music and contracts, etc.) is widely used and this process is easily managed.
+
+For example;
+Leonardo Da Vinci's Mona Lisa in the Louvre museum can be given. Almost all museums display replicas rather than originals. When the replica work is damaged or stolen, the original work continues to protect its existence secretly. This gives the museum an easier and trouble-free management.
+
+## INHERITANCE SYSTEM
+
+Blok zinciri ile ortaya çıkan en büyük sorunlardan birisi de private key veya özel cümlelerin unutulması sorunudur. Sadece yirmi bir milyon adet üretilecek olan Bitcoin’de bile bir milyona yakın coin'in sahipleri tarafından şifreleri unutulduğu veya kaybedildiği için ulaşılamadığı tahmin ediliyor. Notus Network ile blok zinciri platformumuza dahil ettiğimiz “_Karma Blok_” ve “_Durum Bazlı Blok Mimarisi_” ile geliştirilen bir diğer özellik ise "_Veraset Sistemi_" 'dir. Bu özellik en genel haliyle şöyle işlemektedir:
+
+Kullanıcı, hesabındaki bakiyeleri belirli bir süre sonunda belirlediği bir başka hesaba aktarabilmektedir. Bu işlem “_Durum Tabanlı Blok Mimarisi”_ ile mümkün hale getirilmiştir olup ana hesaptaki şifre unutulsa bile işlem geçerli olmaktadır.
+
+## WALLET
 
 Cüzdanlar Notus Ağı üzerindeki en temel bileşenlerdir. Notus Ağı'nın üzerindeki bütün işlemler(Transfer, Akıllı Kontrat, NFT vb.) için cüzdan kullanılır.
 
-### Bir Notus Cüzdan Adresi Nasıl Oluşturulur?
+### How to create a Notus Wallet?
 
-#### Anahtar Kelimelerin Oluşturulması
+#### Creating Keywords
 
 Cüzdan adresi oluşturmak için BIP39 standart kelime listesi kullanılır. Diğer ağlar 12 veya 24 kelimelik listeler kullanmaktadırlar. Notus Ağı bu sayıyı standart olarak 16 kabul eder. 16 tane kelimeyi kullanarak bir cüzdan adresi oluşturur. İçerisinde aynı kelimeleri bulundurmaz.
 
