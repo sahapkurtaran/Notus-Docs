@@ -287,7 +287,7 @@ ea9f6aca279138c58f705c8d4cb4b8ce
 The SashaHash of the combination of all words is taken twice.
 
 ```js
-SashaHash(SashaHash(bütünKelimeler) + : + bütünKelimeler)
+SashaHash(SashaHash(allWords) + : + allWords)
 ```
 
 ```
