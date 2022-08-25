@@ -4,7 +4,7 @@
 Currently, this documentation is in the draft stage. It may contain word correct or incorrect information.
 :::
 
-## Transaction Pools
+## Multiple Transaction Pools
 
 The main focus of Notus architecture is task distribution architecture for miners/validators in the network as a solution to the scaling problem, which is one of the main problems of blockchain platforms. The most effective way to overcome the bottleneck caused by network density underlying scaling problems has been considered to be the design of multiple transaction pools.
 
