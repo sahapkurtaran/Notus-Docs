@@ -376,9 +376,24 @@ NREAj7a29qz1GhXoX88ebRd7zMXtiWMyyy6QkG
 
 ### Heritage-Based Wallet
 
-Blok zinciri ile ortaya çıkan en büyük sorunlardan birisi de private key veya özel cümlelerin unutulması sorunudur. Sadece yirmi bir milyon adet üretilecek olan Bitcoin’de bile bir milyona yakın coin'in sahipleri tarafından şifreleri unutulduğu veya kaybedildiği için ulaşılamadığı tahmin ediliyor. Notus Network ile blok zinciri platformumuza dahil ettiğimiz “_Karma Blok_” ve “_Durum Bazlı Blok Mimarisi_” ile geliştirilen bir diğer özellik ise "_Veraset Sistemi_" 'dir. Bu özellik en genel haliyle şöyle işlemektedir:
+One of the biggest problems that has arisen with the spread of the blockchain is the problem of forgetting the wallet private key or seed phrases. Even in Bitcoin, which has a supply of only twenty-one million, it is estimated that close to one million Bitcoins cannot be reached due to the wallet owners forgetting or losing their passwords. Another feature developed for wallets with "Complex Block Architecture" and "State-Based Block Architecture", which are the main carriers of Notus Network design, is "Heritage-Based System".
 
-Kullanıcı, hesabındaki bakiyeleri belirli bir süre sonunda belirlediği bir başka hesaba aktarabilmektedir. Bu işlem “_Durum Tabanlı Blok Mimarisi”_ ile mümkün hale getirilmiştir olup ana hesaptaki şifre unutulsa bile işlem geçerli olmaktadır.
+The mechanism of operation of this feature is as follows.
+
+Wallet holders authorize inheritance for the assets in their account, provided that they are transferred to a different wallet (either a personal wallet or a friend's wallet address) within a certain period of time. At the end of this period, it can automatically transfer all its assets to the wallet to which it is authorized to inherit. Even if the wallet owners have forgotten their passwords, they can ensure that all the assets in their accounts are transferred to the wallet to which they are authorized to inherit.
+
+The Heritage-Based wallet can also be used for different purposes.
+
+· It can be used as a bequest or donation of assets to private or corporate organizations in real terms.
+· It can be used for the certainty of the payment of the debt for future debt payments.
+· Offering a more secure payment infrastructure, it can enable people to move more comfortably and without a doubt.
+
+For example;
+· Suppose John owns a wallet on the Notus network.
+· John chooses a different wallet as heir for the assets in his Notus wallet.
+· John chooses the date on which the assets in his wallet will be transferred to the heir wallet.
+· Even if John has forgotten the password of his wallet by the date he determined, his assets will be transferred.
+· John can use all his assets as he wishes by reaching the heir's wallet or transferring them to the person he chooses as heir.
 
 ### Time-Based Wallet
 
