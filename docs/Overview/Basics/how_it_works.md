@@ -1,7 +1,7 @@
 # How Notus Works?
 
 :::note
-Şu anda bu dökümantasyon yapım aşamasındadır. Kelime hataları veya yanlış bilgiler bulundurabilir.
+Currently, this documentation is in the draft stage. It may contain word correct or incorrect information
 :::
 
 Notus is a blockchain infrastructure that enables decentralized applications (dAPPs) to run distributed and managed by the community as a decentralized database. The decentralized database; It is a censorship-proof decentralized data collection that is brought together to keep, run and distribute different information, data and transaction save to other nodes.
