@@ -12,10 +12,13 @@ Since Notus Network is a decentralized organization, all decisions taken are tak
 
 Read the whitepaper to learn more about the cryptography, algorithm, and blockchain structure used in the Notus Network design.
 
-## Ölçeklenebilirlik
+## Notus Token
 
-Notus Network’ün odaklandığı sorunların başında blok zinciri ağlarında yaşanan ölçeklenme ve ağ yoğunluğunun kontrol edilmesi problemi gelmektedir. Bu problem farklı başlıklar altında incelenmiştir ve bu sorunlar doğrultunsa platform güncelleştirmesine gidilmiştir.
+Notus Token is Notus Network's native asset that enables decentralized applications to interact with each other and perform transactions.
 
-1. Dağıtık İşlem Havuzları,
-2. Değişken Nonce Hesaplaması,
-3. Madenci / Doğrulayıcı Değişken Rol yapısı.
+Notus Token Usage Status
+
+· Use for payment to the system to process transactions and store data. <br>
+· Become part of the network by staking a certain amount of Notus Tokens and earn block rewards by running a validator (NoVa) node. <br>
+· Participate in Governance processes and contribute to the development and growth of the network by staking Notus Token. <br>
+· Get Notus token grant by developing decentralized applications (dAPPs) on the network. <br>
