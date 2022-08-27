@@ -10,6 +10,8 @@ Notus Network; It is created with the common use and sharing of processor, memor
 
 Since Notus Network is a decentralized organization, all decisions taken are taken by the community, unlike centralized platforms. Decisions and details about the community and management are included in the network after each block created by the validators (NoVa) in the network is approved by the other validators.
 
+Read the whitepaper to learn more about the cryptography, algorithm, and blockchain structure used in the Notus Network design.
+
 ## Ölçeklenebilirlik
 
 Notus Network’ün odaklandığı sorunların başında blok zinciri ağlarında yaşanan ölçeklenme ve ağ yoğunluğunun kontrol edilmesi problemi gelmektedir. Bu problem farklı başlıklar altında incelenmiştir ve bu sorunlar doğrultunsa platform güncelleştirmesine gidilmiştir.
