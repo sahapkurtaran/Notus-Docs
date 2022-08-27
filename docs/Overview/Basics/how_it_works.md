@@ -22,3 +22,5 @@ Notus Token Usage Status
 · Become part of the network by staking a certain amount of Notus Tokens and earn block rewards by running a validator (NoVa) node. <br>
 · Participate in Governance processes and contribute to the development and growth of the network by staking Notus Token. <br>
 · Get Notus token grant by developing decentralized applications (dAPPs) on the network. <br>
+
+Read the token technical paper to learn more about Notus Token design.
